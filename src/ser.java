@@ -6,13 +6,18 @@ import java.nio.file.Paths;
  * Created by MGund on 4/24/2016.
  */
 public class ser {
-    private static Path p = null;
 
 
-    public static void serialize (Path p)
+    private static Path output = null;
+    private static Path input = null;
+
+    public ser (Path output) {
+        this.output = output;
+    }
+
+    public static void serialize (Path input)
     {
-
-        File file = new File( p.toString() );
+        File file = new File( input.toString() );
 
         //List af string med navne på filerne i vores directory
         String[] names = file.list();
@@ -20,7 +25,7 @@ public class ser {
         //Looper over listen
         for ( String name : names ) {
 
-            File currentFile = new File( p.toString() + "\\" + name );
+            File currentFile = new File( input.toString() + "\\" + name );
 
             if (currentFile.isDirectory()) {
                 serialize( currentFile.toPath() );
@@ -46,7 +51,8 @@ public class ser {
         try
         {
             //Path skal ændres fra pc til pc, da den ville have den fulde sti til min mappe, Data, i projektet*
-            File file = new File("C:\\Users\\MGund\\OneDrive\\Studie\\Datalogi 2016\\Førsteårsprojekt\\Program\\Data\\" + name + ".ser");
+            File file = new File(output.toString() + "\\" + name + ".ser");
+
             FileInputStream fileIn = new FileInputStream(file);
             ObjectInputStream in = new ObjectInputStream(fileIn);
             f = (File) in.readObject();
