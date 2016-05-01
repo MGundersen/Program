@@ -13,6 +13,7 @@ public class main {
 
         Path input = Paths.get( "D:\\Documents 2\\Data\\" );
 
+
         Path output = Paths.get( "C:\\Users\\MGund\\OneDrive\\Studie\\Datalogi 2016\\Førsteårsprojekt\\Program\\Data\\" );
 
         ser ez = new ser(output);
@@ -27,6 +28,25 @@ public class main {
         File descent = ez.deserialize( "descent.csv" );
         File weightlimits = ez.deserialize( "weightlimits.csv" );
         File EBBRESSA138 = ez.deserialize( "EBBR-ESSA-138.txt" );
+
+
+        dataArrays d = new dataArrays();
+
+        cruiseData[][] cruiseList = d.cruiseFill(cruise);
+
+        System.out.println( "Cruise[0][0]: " + cruiseList[0][0].FuelFlow );
+
+        climbData[][] climbList = d.climbFill(climb);
+
+        System.out.println( "Climb[1][0]: " + climbList[1][0].Fuel );
+
+        descentData[][] descentList = d.descentFill(descent);
+
+        System.out.println( "Descent[1][0]: " + descentList[1][0].Fuel );
+
+        weightLimitsData[] weightLimitList = d.weightLimitsFill(weightlimits);
+
+        System.out.println( "Weightlimit[0]: " + weightLimitList[0].weight );
 
 
     }
