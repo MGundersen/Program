@@ -12,11 +12,13 @@ public class main {
 
     public static void main(String[] args) {
 
+        //Kasper's paths
+        //Path input = Paths.get( "C:\\Users\\Kasper\\flight paths\\Data\\ACP\\Falcon 7x" );
+        //Path output = Paths.get( "C:\\Users\\Kasper\\flight paths\\Data\\" );
 
-        Path input = Paths.get( "C:\\Users\\Kasper\\flight paths\\Data\\ACP\\Falcon 7x" );
-
-
-        Path output = Paths.get( "C:\\Users\\Kasper\\flight paths\\Data\\" );
+        //Mathias' paths
+        Path input = Paths.get( "D:\\Documents 2\\Data" );
+        Path output = Paths.get( "C:\\Users\\MGund\\OneDrive\\Studie\\Datalogi 2016\\Førsteårsprojekt\\Program\\Data\\" );
 
         ser ez = new ser(output);
 
@@ -25,31 +27,32 @@ public class main {
 
 
         //Ligger info fra vores forskellige .ser filer ind i files
-        File climb = ez.deserialize( "climb.csv" );
-        File cruise = ez.deserialize( "cruise.csv" );
-        File descent = ez.deserialize( "descent.csv" );
-        File weightlimits = ez.deserialize( "weightlimits.csv" );
+        File climbSer = ez.deserialize( "climb.csv" );
+        File cruiseSer = ez.deserialize( "cruise.csv" );
+        File descentSer = ez.deserialize( "descent.csv" );
+        File weightlimitsSer = ez.deserialize( "weightlimits.csv" );
         //File EBBRESSA138 = ez.deserialize( "EBBR-ESSA-138.txt" );
 
 
         dataArrays d = new dataArrays();
 
-        cruiseData[][] cruiseList = d.cruiseFill(cruise);
+        cruiseData[][] cruiseList = d.cruiseFill(cruiseSer);
 
         System.out.println( "Cruise[0][0]: " + cruiseList[0][0].FuelFlow );
 
-        climbData[][] climbList = d.climbFill(climb);
+        climbData[][] climbList = d.climbFill(climbSer);
 
         System.out.println( "Climb[1][0]: " + climbList[1][0].Fuel );
 
-        descentData[][] descentList = d.descentFill(descent);
+        descentData[][] descentList = d.descentFill(descentSer);
 
         System.out.println( "Descent[1][0]: " + descentList[1][0].Fuel );
 
-        weightLimitsData[] weightLimitList = d.weightLimitsFill(weightlimits);
+        weightLimitsData[] weightLimitList = d.weightLimitsFill(weightlimitsSer);
 
         System.out.println( "Weightlimit[0]: " + weightLimitList[0].weight );
 
 
+        
     }
 }
