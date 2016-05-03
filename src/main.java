@@ -13,10 +13,10 @@ public class main {
     public static void main(String[] args) {
 
 
-        Path input = Paths.get( "D:\\Documents 2\\Data\\" );
+        Path input = Paths.get( "C:\\Users\\Kasper\\flight paths\\Data\\ACP\\Falcon 7x" );
 
 
-        Path output = Paths.get( "C:\\Users\\MGund\\OneDrive\\Studie\\Datalogi 2016\\Førsteårsprojekt\\Program\\Data\\" );
+        Path output = Paths.get( "C:\\Users\\Kasper\\flight paths\\Data\\" );
 
         ser ez = new ser(output);
 
@@ -25,11 +25,11 @@ public class main {
 
 
         //Ligger info fra vores forskellige .ser filer ind i files
-        File climb = ez.deserialize( "Distance.climb.csv" );
+        File climb = ez.deserialize( "climb.csv" );
         File cruise = ez.deserialize( "cruise.csv" );
-        File descent = ez.deserialize( "Distance.descent.csv" );
+        File descent = ez.deserialize( "descent.csv" );
         File weightlimits = ez.deserialize( "weightlimits.csv" );
-        File EBBRESSA138 = ez.deserialize( "EBBR-ESSA-138.txt" );
+        //File EBBRESSA138 = ez.deserialize( "EBBR-ESSA-138.txt" );
 
 
         dataArrays d = new dataArrays();
