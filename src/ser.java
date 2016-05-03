@@ -34,7 +34,7 @@ public class ser {
                         out.writeObject(currentFile);
                         out.close();
                         fileOut.close();
-                        System.out.println("Serialized data is saved in /Data/" + name);
+                        System.out.println("Serialized data is saved in /Data/" + name+".ser");
 
                     } catch (IOException e) {
                         e.printStackTrace();

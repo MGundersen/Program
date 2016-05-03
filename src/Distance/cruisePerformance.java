@@ -1,5 +1,8 @@
 package Distance;
 
+import Data.cruiseData;
+import Data.dataArrays;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -15,6 +18,25 @@ import java.io.IOException;
 public class cruisePerformance {
 
     /**
+     * the following three methods are used to calculate values of respectively weight, flight level and ISA to indices
+     * @param i
+     * @return
+     */
+    public int weightToIndex(int i){
+        int result = (i-33000)/4000;
+        return result;
+    }
+
+    public int FLToIndex(double i){
+        double n = i*0.1;
+        return( (int) n );
+    }
+
+    public int ISAToIndex(int i) {
+        return (10 + i) / 5;
+    }
+
+    /**
      * returns the fuel consumption per hour based on flight level, ISA and weight of the aircraft
      * @param file the file with Data.cruiseData performance data
      * @param FL the flight level
@@ -22,24 +44,11 @@ public class cruisePerformance {
      * @param weight weight of the plane
      * @return
      */
-    public double fuelCruise( File file, int FL, int ISA, int weight ) throws Exception {
-        try{
-            BufferedReader br = new BufferedReader( new FileReader( file ) );
-            String line;
+    public double fuelCruise(cruiseData[][] array, int FL, int ISA, int weight ){
+        int FL_index = FLToIndex(FL);
+        int weight_index = weightToIndex(weight);
 
-            while( (line = br.readLine()) != null ){
-                if( line.split(";")[0].equals(Integer.toString(FL)) ){
-                    if( line.split(";")[1].equals(Integer.toString(ISA)) ){
-                        if( line.split(";")[2].equals(Integer.toString(weight)) ) {
-                            System.out.println(line.split(";")[2]);
-                            br.close();
-                            return Double.parseDouble(line.split(";")[3]); //needs to be converted to gallons
-                        }
-                    }
-                }
-            }
-        }catch( IOException e ){}
-        throw new Exception(){};
+        return array[FL_index][weight_index].FuelFlow;
     }
 
     /**
@@ -50,22 +59,10 @@ public class cruisePerformance {
      * @param weight weight of the plane
      * @return
      */
-    public double idealCruiseSpeed( File file, int FL, int ISA, int weight ) throws Exception {
-        try{
-            BufferedReader br = new BufferedReader( new FileReader( file ) );
-            String line;
+    public double idealCruiseSpeed( cruiseData[][] array, int FL, int ISA, int weight ){
+        int FL_index = FLToIndex(FL);
+        int weight_index = weightToIndex(weight);
 
-            while( (line = br.readLine()) != null ){
-                if( line.split(";")[0].equals(Integer.toString(FL)) ){
-                    if( line.split(";")[1].equals(Integer.toString(ISA)) ){
-                        if( line.split(";")[2].equals(Integer.toString(weight)) ){
-                            br.close();
-                            return Double.parseDouble(line.split(";")[4]); //needs to be converted to gallons
-                        }
-                    }
-                }
-            }
-        }catch( IOException e ){}
-        throw new Exception(){};
+        return array[FL_index][weight_index].Speed;
     }
 }

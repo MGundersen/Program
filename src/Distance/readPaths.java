@@ -1,5 +1,7 @@
 package Distance;
 
+import Data.climbData;
+import Data.cruiseData;
 import Distance.climb;
 import Distance.coordinate;
 
@@ -191,7 +193,7 @@ public class readPaths {
      * @param weight weight of the aircraft
      * @return
      */
-    private int largestClimbAdjacent(File route, File climbData, coordinate c1, coordinate c2,  int FL_from, int ISA, int weight) throws Exception {
+    private int largestClimbAdjacent(File route, climbData[][] climbData, coordinate c1, coordinate c2, int FL_from, int ISA, int weight) {
         climb climb = new climb();
 
         double maxDistance = deltaAdjacentWaypoint(c1, c2);
@@ -238,7 +240,7 @@ public class readPaths {
      * @return
      * @throws Exception
      */
-    public List<coordinateAndFL> climbRoute(File route, File climbData, coordinate c1, int FL_from, int FL_to, int ISA, int weight) throws Exception {
+    public List<coordinateAndFL> climbRoute(File route, climbData[][] climbData, coordinate c1, int FL_from, int FL_to, int ISA, int weight) {
         List<coordinateAndFL> result = new ArrayList<>();
 
         climb climb = new climb();
@@ -257,7 +259,7 @@ public class readPaths {
 
         if(index1 == -1){
             System.out.println("Waypoint 1 does not exist");
-            throw new Exception();
+            return null;
         }
 
         index2 = index1 + 1;        //ok to assume that index1 is not that last index since this would mean the last waypoint, therefore also the landing point
@@ -296,7 +298,139 @@ public class readPaths {
         return result;
     }
 
+    /**
+     * calculates and returns the fuel needed for climbing between two waypoints. only used by the method "fuelClimbCruise".
+     * @param climbData climb data
+     * @param cruiseData cruise data
+     * @param c1 coordinate number 1
+     * @param c2 coordinate number 2
+     * @param FL_from flight level that is being climbed from
+     * @param FL_to flight level that is being climbed to
+     * @param ISA ISA
+     * @param weight weight of the aircraft
+     * @return
+     */
+    private double fuelAdjacentClimb(climbData[][] climbData, cruiseData[][] cruiseData, coordinate c1, coordinate c2, int FL_from, int FL_to, int ISA, int weight){
+        climb climb = new climb();
+        cruisePerformance cruise = new cruisePerformance();
+        double climbFuel = climb.fuelClimb(climbData, FL_from, FL_to, ISA, weight);
+        double climbDistance = climb.distanceClimb(climbData, FL_from, FL_to, ISA, weight);
+        double cruiseFuel = cruise.fuelCruise(cruiseData, FL_to, ISA, weight);
+        double cruiseSpeed = cruise.idealCruiseSpeed(cruiseData, FL_to, ISA, weight);
+
+        double distance = deltaAdjacentWaypoint(c1, c2);
+        double deltaDistance = distance - climbDistance;
+
+        double cruiseTime = deltaDistance/cruiseSpeed;
+
+        return cruiseTime*cruiseFuel+climbFuel;
+    }
 
 
+    /**
+     * calculates and returns the fuel needed for climbing from a flight level to another at a given starting coordinate
+     * @param route file containing the route data
+     * @param climbData climb data
+     * @param cruiseData cruise data
+     * @param c1 starting coordinate
+     * @param FL_from flight level that is being climbed from
+     * @param FL_to flight level that is being climbed to
+     * @param ISA ISA
+     * @param weight weight
+     * @return
+     */
+
+    public double fuelClimbCruise(File route, climbData[][] climbData, cruiseData[][] cruiseData, coordinate c1, int FL_from, int FL_to, int ISA, int weight){
+        List<coordinateAndFL> path = climbRoute(route, climbData, c1, FL_from, FL_to, ISA, weight);
+        double result = 0;
+
+        int curr_FL_from = FL_from;
+        int curr_FL_to;
+
+        coordinate curr_c1 = c1;
+        coordinate curr_c2;
+
+        for(coordinateAndFL c : path){
+            curr_c2 = c.c;
+            curr_FL_to = c.FL;
+
+            result = result + fuelAdjacentClimb(climbData, cruiseData, curr_c1, curr_c2, curr_FL_from, curr_FL_to, ISA, weight);
+
+            curr_c1 = curr_c2;
+            curr_FL_from = curr_FL_to;
+        }
+
+        return result;
+    }
+
+    /**
+     * returns the time that it takes to climb between two coordinates
+     * @param climbData climb data
+     * @param cruiseData cruise data
+     * @param c1 starting coordinate
+     * @param c2 ending coordinate
+     * @param FL_from flight level that is being climbed from
+     * @param FL_to flight level that is being climbed to
+     * @param ISA ISA
+     * @param weight weight
+     * @return
+     */
+    private double timeAdjacentClimb(climbData[][] climbData, cruiseData[][] cruiseData, coordinate c1, coordinate c2, int FL_from, int FL_to, int ISA, int weight){
+        climb climb = new climb();
+        cruisePerformance cruise = new cruisePerformance();
+
+        double climbTime = climb.timeClimb(climbData, FL_from, FL_to, ISA, weight);
+        double climbDistance = climb.distanceClimb(climbData, FL_from, FL_to, ISA, weight);
+        double cruiseSpeed = cruise.idealCruiseSpeed(cruiseData, FL_to, ISA, weight);
+
+        double distance = deltaAdjacentWaypoint(c1, c2);
+        double deltaDistance = distance - climbDistance;
+
+        double cruiseTime = deltaDistance/cruiseSpeed;
+
+        return climbTime + cruiseTime;
+
+
+    }
+
+    /**
+     * calculates and returns the time spent climbing from a flight level to another at a given starting coordinate
+     * @param route the file containing data of the route
+     * @param climbData climb data
+     * @param cruiseData cruise data
+     * @param c1 starting coordinate
+     * @param FL_from flight level that is being climbed from
+     * @param FL_to flight level that is being climbed to
+     * @param ISA ISA
+     * @param weight weight
+     * @return
+     */
+    public double timeClimbCruise(File route, climbData[][] climbData, cruiseData[][] cruiseData, coordinate c1, int FL_from, int FL_to, int ISA, int weight){
+        List<coordinateAndFL> path = climbRoute(route, climbData, c1, FL_from, FL_to, ISA, weight);
+        double result = 0;
+
+        int curr_FL_from = FL_from;
+        int curr_FL_to;
+
+        coordinate curr_c1 = c1;
+        coordinate curr_c2;
+
+        for(coordinateAndFL c : path){
+            curr_c2 = c.c;
+            curr_FL_to = c.FL;
+
+            result = result + timeAdjacentClimb(climbData, cruiseData, curr_c1, curr_c2, curr_FL_from, curr_FL_to, ISA, weight);
+
+            curr_c1 = curr_c2;
+            curr_FL_from = curr_FL_to;
+        }
+
+        return result;
+    }
+
+    /**
+     * TO DO ---------------------------------------------------------------------------------
+     * make the same methods for descending
+     */
 }
 
