@@ -1,5 +1,7 @@
+package Distance;
+
 /**
- * holds the longitude and latitude of a coordinate
+ * holds the longitude and latitude of a Distance.coordinate
  */
 public class coordinate{
 

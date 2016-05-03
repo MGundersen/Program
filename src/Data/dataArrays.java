@@ -1,9 +1,14 @@
+package Data;
+
+import Data.climbData;
+import Data.cruiseData;
+import Data.descentData;
+import Data.weightLimitsData;
+
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 /**
  * Created by Kasper on 29-04-2016.
@@ -69,6 +74,10 @@ public class dataArrays {
     private int FLToIndex(double i){
         double n = i*0.1;
         return( (int) n );
+    }
+
+    private int ISAToIndex(int i) {
+        return (10 + i) / 5;
     }
 
     private int weightFact(int i){
@@ -139,6 +148,7 @@ public class dataArrays {
             String[] curr_line;
 
             int indexFL;
+            int ISA;
             int indexWeight;
 
             double Distance;
@@ -150,15 +160,15 @@ public class dataArrays {
                 if (lineCounter > 3) {
                     curr_line = line.split(";");
 
-                    if (curr_line[1].equals("0")) {
                         indexFL = FLToIndex(Integer.parseInt(curr_line[0]));
+                        ISA = ISAToIndex(Integer.parseInt(curr_line[1]));
                         indexWeight = weightToIndex(Integer.parseInt(curr_line[2]));
 
                         Distance = Double.parseDouble(curr_line[3]);
                         Time = Double.parseDouble(curr_line[4]);
                         Fuel = Double.parseDouble(curr_line[5]);
                         result[indexFL][indexWeight] = new climbData(Distance, Time, Fuel);
-                    }
+
                 }
                 lineCounter++;
             }
@@ -273,7 +283,5 @@ public class dataArrays {
 
         return  null;
     }
-
-
 
 }

@@ -1,3 +1,8 @@
+package Distance;
+
+import Distance.climb;
+import Distance.coordinate;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -39,7 +44,7 @@ public class readPaths {
                             new coordinate(
                                     Double.parseDouble( lineArray[1].replace(",",".") ),     //lineArray[1] equals latitude, comma must be replaced by dot
                                     Double.parseDouble( lineArray[2].replace(",",".") )      //lineArray[2] equals longitude, comma must be replaced by dot
-                            ) //new coordinate
+                            ) //new Distance.coordinate
                     ); //coordinateList.add
                 }// if-statement
             } //while-loop
@@ -172,13 +177,13 @@ public class readPaths {
     }
 
     /**
-     * returns the largest reachable flight level from one coordinate to another,
+     * returns the largest reachable flight level from one Distance.coordinate to another,
      * depending on weight of the plane, ISA and current flight level
      * FL_to is used to find the greatest flight level. this, however, can not be returned
      * since the while-loop stops as soon as distanceClimb for a FL_to is larger than maxDistance
      * therefore, the last checked flight level, FL_max, must be returned
      * @param route file containing route data
-     * @param climbData file containing climb data
+     * @param climbData file containing Distance.climb data
      * @param c1 waypoint number one
      * @param c2 waypoint number two
      * @param FL_from current flight level
@@ -207,7 +212,7 @@ public class readPaths {
     }
 
     /**
-     * used by largestClimb. in the return list it's necessary to have a map with a coordinate and a current flight level
+     * used by largestClimb. in the return list it's necessary to have a map with a Distance.coordinate and a current flight level
      */
     private class coordinateAndFL{
         coordinate c;
@@ -220,7 +225,7 @@ public class readPaths {
     }
 
     /**
-     * if a plane wants to climb it might not be able to make it between just two waypoints.
+     * if a plane wants to Distance.climb it might not be able to make it between just two waypoints.
      * this method returns a list of flight levels at coordinates.
      * in other words, gives a climbing route for the plane to reach a destined flight level.
      * @param route

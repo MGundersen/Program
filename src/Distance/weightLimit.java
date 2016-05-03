@@ -1,4 +1,4 @@
-/**
+package Distance; /**
  * Created by Kasper on 27-04-2016.
  */
 
@@ -14,7 +14,7 @@ public class weightLimit {
 
 
     /**
-     * checks if a plane can climb from FL_now to FL_later based on the weight of the plane and current ISA
+     * checks if a plane can Distance.climb from FL_now to FL_later based on the weight of the plane and current ISA
      * @param file file containing data of weight limits
      * @param FL_to flight level that should be climbed to
      * @param ISA the ISA

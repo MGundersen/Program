@@ -1,3 +1,5 @@
+package Distance;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -8,13 +10,13 @@ import java.io.IOException;
  */
 
 /**
- * contains the cruiseData performance part of the aircraft performance data
+ * contains the Data.cruiseData performance part of the aircraft performance data
  */
 public class cruisePerformance {
 
     /**
      * returns the fuel consumption per hour based on flight level, ISA and weight of the aircraft
-     * @param file the file with cruiseData performance data
+     * @param file the file with Data.cruiseData performance data
      * @param FL the flight level
      * @param ISA ISA
      * @param weight weight of the plane
@@ -42,7 +44,7 @@ public class cruisePerformance {
 
     /**
      * returns the ideal speed based on flight level, ISA and weight of the aircraft
-     * @param file the file with cruiseData performance data
+     * @param file the file with Data.cruiseData performance data
      * @param FL the flight level
      * @param ISA ISA
      * @param weight weight of the plane

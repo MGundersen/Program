@@ -1,3 +1,5 @@
+import Data.*;
+
 import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -23,9 +25,9 @@ public class main {
 
 
         //Ligger info fra vores forskellige .ser filer ind i files
-        File climb = ez.deserialize( "climb.csv" );
+        File climb = ez.deserialize( "Distance.climb.csv" );
         File cruise = ez.deserialize( "cruise.csv" );
-        File descent = ez.deserialize( "descent.csv" );
+        File descent = ez.deserialize( "Distance.descent.csv" );
         File weightlimits = ez.deserialize( "weightlimits.csv" );
         File EBBRESSA138 = ez.deserialize( "EBBR-ESSA-138.txt" );
 
