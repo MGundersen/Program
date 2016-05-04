@@ -17,54 +17,22 @@ public class dataArrays {
 
 
 
-    private cruiseData[][] cruiseArray(File cruiseFile){
+    private cruiseData[][] cruiseArray(File cruiseFile) {
 
-
-        List<Integer> FL = new ArrayList<>();
-        List<Integer> ISA = new ArrayList<>();
-        List<Integer> weight = new ArrayList<>();
-
-        try{
-            BufferedReader br = new BufferedReader(new FileReader(cruiseFile));
-
-            String line;
-
-            String[] curr_line;
-
-            int lineCounter = 0;
-
-            while((line = br.readLine()) != null ) {
-                if (lineCounter > 3) {
-                    curr_line = line.split(";");
-
-                    if (!FL.contains(curr_line[0])) {
-                        FL.add(Integer.parseInt(curr_line[0]));
-                    }
-
-
-                    if (!FL.contains(curr_line[1])) {
-                        ISA.add(Integer.parseInt(curr_line[1]));
-                    }
-
-                    if (!FL.contains(curr_line[2])) {
-                        weight.add(Integer.parseInt(curr_line[2]));
-                    }
-                }
-                lineCounter++;
-            }
-
-            int counter0 = FL.size();
-            int counter1 = ISA.size();
-            int counter2 = weight.size();
-
-            cruiseData[][] result = new cruiseData[counter0][counter2];
+        try {
+            List<String> lines = Files.readAllLines( cruiseFile.toPath() );
+            int fl = lines.get(0).split(";").length;
+            //int isa = lines.get(1).split(";").length;
+            int weight = lines.get(2).split(";").length;
+            cruiseData[][] result = new cruiseData[fl][weight];
 
             return result;
 
-        }catch(IOException e){e.printStackTrace();}
+        } catch (IOException e) {e.printStackTrace();}
 
         return null;
     }
+
 
     private int weightToIndex(int i){
         int result = (i-33000)/4000;
@@ -128,7 +96,6 @@ public class dataArrays {
             int fl = lines.get(0).split(";").length;
             //int isa = lines.get(1).split(";").length;
             int weight = lines.get(2).split(";").length;
-
             climbData[][] result = new climbData[fl][weight];
 
             return result;

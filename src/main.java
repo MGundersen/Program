@@ -16,12 +16,12 @@ public class main {
     public static void main(String[] args) {
 
         //Kasper's paths
-        //Path input = Paths.get( "C:\\Users\\Kasper\\flight paths\\Data\\ACP\\Falcon 7x" );
-        //Path output = Paths.get( "C:\\Users\\Kasper\\flight paths\\Data\\" );
+        Path input = Paths.get( "C:\\Users\\Kasper\\flight paths\\Data\\ACP\\Falcon 7x" );
+        Path output = Paths.get( "C:\\Users\\Kasper\\flight paths\\Data\\" );
 
         //Mathias' paths
-        Path input = Paths.get( "D:\\Documents 2\\Data" );
-        Path output = Paths.get( "C:\\Users\\MGund\\OneDrive\\Studie\\Datalogi 2016\\Førsteårsprojekt\\Program\\Data\\" );
+        //Path input = Paths.get( "D:\\Documents 2\\Data" );
+        //Path output = Paths.get( "C:\\Users\\MGund\\OneDrive\\Studie\\Datalogi 2016\\Førsteårsprojekt\\Program\\Data\\" );
 
         ser ez = new ser(output);
 
@@ -31,10 +31,10 @@ public class main {
 
         //Ligger info fra vores forskellige .ser filer ind i files
         climbData[][] climbArray = (climbData[][]) ez.deserializeData( "climb.csv" );
-        //cruiseData[][] cruiseArray = (cruiseData[][]) ez.deserializeData( "cruise.csv" );
         descentData[][] descentArray = (descentData[][]) ez.deserializeData( "descent.csv" );
+        cruiseData[][] cruiseArray = (cruiseData[][]) ez.deserializeData( "cruise.csv" );
         weightLimitsData[] weightlimitsArray = (weightLimitsData[]) ez.deserializeWeight( "weightlimits.csv" );
-        List EBBRESSA138Array = (List) ez.deserializeRoute( "EBBR-ESSA-138.txt" );
+        //List EBBRESSA138Array = (List) ez.deserializeRoute( "EBBR-ESSA-138.txt" );
 
 
 

@@ -137,9 +137,7 @@ public class ser {
     private void serializeClimb (File file) {
         dataArrays d = new dataArrays();
         climbData[][] array = d.climbFill(file);
-
-        ArrayList<String> list = new ArrayList<>();
-
+        System.out.println(array.length+"climb");
         try {
             FileOutputStream fileOut =
                     new FileOutputStream(output + "\\" + file.getName() + ".ser");
@@ -153,6 +151,7 @@ public class ser {
     private void serializeCruise (File file) {
         dataArrays d = new dataArrays();
         cruiseData[][] array = d.cruiseFill(file);
+        System.out.println(array.length+"cruise");
         try {
             FileOutputStream fileOut =
                     new FileOutputStream(output + "\\" + file.getName() + ".ser");
@@ -166,6 +165,7 @@ public class ser {
     private void serializeDescent (File file) {
         dataArrays d = new dataArrays();
         descentData[][] array = d.descentFill(file);
+        System.out.println(array.length+"descent");
         try {
             FileOutputStream fileOut =
                     new FileOutputStream(output + "\\" + file.getName() + ".ser");
