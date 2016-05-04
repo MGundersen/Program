@@ -1,3 +1,4 @@
+import Data.*;
 import PQHeap.*;
 import Distance.*;
 
@@ -8,7 +9,16 @@ import java.util.List;
  */
 public class Dijkstra {
     PQHeap heap;
-    List<coordinate> waypoints;
+    List<coordinate> Q;
+    climbData[][] climbData;
+
+    public Dijkstra(PQHeap heap, List<coordinate> Q, climbData[][] climbData){
+        this.heap = heap;
+        this.Q = Q;
+        this.climbData = climbData;
+    }
+
+    readPaths p = new readPaths();
 
 
 }

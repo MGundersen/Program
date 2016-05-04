@@ -97,8 +97,8 @@ public class readPaths {
         double deltaLat = phi2-phi1;
 
         double a =  Math.sin(deltaLat/2) * Math.sin(deltaLat/2) +       //sin^2*(delta_phi/2)+
-                    Math.cos(phi1) * Math.cos(phi2) *                   //cos(phi1)*cos(phi2)*
-                    Math.sin(deltaLong/2) * Math.sin(deltaLong/2);      //sin^2(delta_longitude/2)
+                Math.cos(phi1) * Math.cos(phi2) *                   //cos(phi1)*cos(phi2)*
+                        Math.sin(deltaLong/2) * Math.sin(deltaLong/2);      //sin^2(delta_longitude/2)
 
 
         double c = 2 * Math.atan2( Math.sqrt(a), Math.sqrt(1-a) );
@@ -109,7 +109,7 @@ public class readPaths {
 
     /**
      * returns the distance from a waypoint to another
-     * @param file file containing the specified route
+
      * @param c1 waypoint one
      * @param c2 waypoint 2
      * @return
@@ -157,7 +157,7 @@ public class readPaths {
 
     /**
      * calculates and returns the distance of a whole flight path
-     * @param file a file containing flight path data
+
      * @return
      */
     public double distanceRoute(List<coordinate> coordinates){
@@ -183,7 +183,7 @@ public class readPaths {
      * FL_to is used to find the greatest flight level. this, however, can not be returned
      * since the while-loop stops as soon as distanceClimb for a FL_to is larger than maxDistance
      * therefore, the last checked flight level, FL_max, must be returned
-     * @param route file containing route data
+
      * @param climbData file containing Distance.climb data
      * @param c1 waypoint number one
      * @param c2 waypoint number two
@@ -192,7 +192,7 @@ public class readPaths {
      * @param weight weight of the aircraft
      * @return
      */
-    private int largestClimbAdjacent(File route, climbData[][] climbData, coordinate c1, coordinate c2, int FL_from, int ISA, int weight) {
+    public int largestClimbAdjacent(climbData[][] climbData, coordinate c1, coordinate c2, int FL_from, int ISA, int weight) {
 
         double maxDistance = deltaAdjacentWaypoint(c1, c2);
 
@@ -264,7 +264,7 @@ public class readPaths {
         coordinate waypoint2 = coordinates.get(index2);
 
         //if FL_to can be reached by flying from waypoint1 to the adjacent waypoint2
-        if ( FL_to <= largestClimbAdjacent(route, climbData, waypoint1, waypoint2, FL_from, ISA, weight) ){
+        if ( FL_to <= largestClimbAdjacent(climbData, waypoint1, waypoint2, FL_from, ISA, weight) ){
             result.add( new coordinateAndFL( waypoint2, FL_to ) );
             return result;
         }
@@ -273,7 +273,7 @@ public class readPaths {
 
         //else plan a flight route
         //adds every waypoint but the last
-        while( FL_to > (current_FL = largestClimbAdjacent(route, climbData, waypoint1, waypoint2, FL_from, ISA, weight) ) ){
+        while( FL_to > (current_FL = largestClimbAdjacent(climbData, waypoint1, waypoint2, FL_from, ISA, weight) ) ){
             result.add( new coordinateAndFL( waypoint2, current_FL ) );
 
             index1++;
