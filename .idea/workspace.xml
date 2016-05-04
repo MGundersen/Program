@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="99004ea3-8d27-4a31-89f6-6936514d4edc" name="Default" comment="jeg ryddet op i en del klasser. derudover har jeg tilføjet metoder, som kan udregne fuel cost og time spent for climb" />
+=======
+    <list default="true" id="99004ea3-8d27-4a31-89f6-6936514d4edc" name="Default" comment="jeg ryddet op i en del klasser. derudover har jeg tilføjet metoder, som kan udregne fuel cost og time spent for climb">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Dijkstra.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PQHeap/Element.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PQHeap/PQ.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PQHeap/PQHeap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Program/main.class" afterPath="$PROJECT_DIR$/out/production/Program/main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Distance/readPaths.java" afterPath="$PROJECT_DIR$/src/Distance/readPaths.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java" afterPath="$PROJECT_DIR$/src/main.java" />
+    </list>
+>>>>>>> origin/master
     <ignored path="Program.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,6 +39,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -34,6 +48,86 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="climb.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Distance/climb.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weightLimit.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Distance/weightLimit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="coordinate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Distance/coordinate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PQHeap.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PQHeap/PQHeap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#363#364#0" expanded="true" />
+                <element signature="e#420#421#0" expanded="true" />
+                <element signature="e#2736#2737#0" expanded="true" />
+                <element signature="e#2781#2782#0" expanded="true" />
+                <element signature="e#2958#2959#0" expanded="true" />
+                <element signature="e#3002#3003#0" expanded="true" />
+                <element signature="e#3181#3182#0" expanded="true" />
+                <element signature="e#3227#3228#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PQ.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PQHeap/PQ.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Element.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PQHeap/Element.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+              <folding />
+>>>>>>> origin/master
             </state>
           </provider>
         </entry>
@@ -42,7 +136,11 @@
         <entry file="file://$PROJECT_DIR$/src/ser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
               <caret line="112" column="13" selection-start-line="112" selection-start-column="13" selection-end-line="112" selection-end-column="13" />
+=======
+              <caret line="399" column="0" selection-start-line="399" selection-start-column="0" selection-end-line="399" selection-end-column="0" />
+>>>>>>> origin/master
               <folding>
                 <element signature="method#serialize#0;class#ser#0" expanded="false" />
                 <element signature="method#deserializeWeight#0;class#ser#0" expanded="false" />
@@ -57,12 +155,23 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="climbData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Data/climbData.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
               <folding />
+=======
+      <file leaf-file-name="Dijkstra.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Dijkstra.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2724359">
+              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> origin/master
             </state>
           </provider>
         </entry>
@@ -94,20 +203,32 @@
         <option value="$PROJECT_DIR$/src/descentData.java" />
         <option value="$PROJECT_DIR$/src/weightLimitsData.java" />
         <option value="$PROJECT_DIR$/src/dataArrays.java" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/src/ser.java" />
+>>>>>>> origin/master
         <option value="$PROJECT_DIR$/src/Distance/descent.java" />
         <option value="$PROJECT_DIR$/src/Data/dataArrays.java" />
         <option value="$PROJECT_DIR$/src/Distance/cruisePerformance.java" />
         <option value="$PROJECT_DIR$/src/Distance/weightLimit.java" />
+        <option value="$PROJECT_DIR$/src/main.java" />
         <option value="$PROJECT_DIR$/src/Distance/climb.java" />
         <option value="$PROJECT_DIR$/src/Data/writeOut.java" />
         <option value="$PROJECT_DIR$/src/Distance/readPaths.java" />
         <option value="$PROJECT_DIR$/src/Distance/coordinate.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/Data/climbData.java" />
         <option value="$PROJECT_DIR$/src/Data/cruiseData.java" />
         <option value="$PROJECT_DIR$/src/Data/descentData.java" />
         <option value="$PROJECT_DIR$/src/Data/weightLimitsData.java" />
         <option value="$PROJECT_DIR$/src/ser.java" />
         <option value="$PROJECT_DIR$/src/main.java" />
+=======
+        <option value="$PROJECT_DIR$/src/PQHeap/Element.java" />
+        <option value="$PROJECT_DIR$/src/PQHeap/PQ.java" />
+        <option value="$PROJECT_DIR$/src/PQHeap/PQHeap.java" />
+        <option value="$PROJECT_DIR$/src/Dijkstra.java" />
+>>>>>>> origin/master
       </list>
     </option>
   </component>
@@ -193,7 +314,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Distance" />
+              <option name="myItemId" value="PQHeap" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -211,21 +332,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
+              <option name="myItemId" value="Distance" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+<<<<<<< HEAD
       <pane id="Scratches" />
       <pane id="PackagesPane" />
+=======
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+>>>>>>> origin/master
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+    <property name="last_opened_file_path" value="$USER_HOME$/Travian/myFirstSeleniumTest" />
+>>>>>>> origin/master
   </component>
   <component name="RunManager" selected="Application.main">
     <configuration default="false" name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -685,14 +815,22 @@
       <workItem from="1462296210500" duration="7913000" />
       <workItem from="1462306473529" duration="12000" />
       <workItem from="1462306652052" duration="70000" />
+<<<<<<< HEAD
       <workItem from="1462307289479" duration="325000" />
       <workItem from="1462353231288" duration="7176000" />
       <workItem from="1462360430057" duration="510000" />
+=======
+      <workItem from="1462356049602" duration="1337000" />
+>>>>>>> origin/master
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="41309000" />
+=======
+    <option name="totallyTimeSpent" value="34635000" />
+>>>>>>> origin/master
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -700,21 +838,36 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32713348" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769555" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+>>>>>>> origin/master
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19365427" sideWeight="0.50656456" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19176598" sideWeight="0.49343544" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.119936034" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34038055" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24425887" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+>>>>>>> origin/master
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39869988" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997833" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> origin/master
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -741,7 +894,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+<<<<<<< HEAD
       <option name="time" value="23" />
+=======
+      <option name="time" value="24" />
+>>>>>>> origin/master
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -750,6 +907,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Data/climbData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -766,6 +924,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> origin/master
     <entry file="file://$PROJECT_DIR$/src/Distance/climb.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -811,9 +971,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="78" column="11" selection-start-line="78" selection-start-column="11" selection-end-line="78" selection-end-column="11" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#cruiseArray#0;class#dataArrays#0" expanded="false" />
-            <element signature="e#1851#1852#0" expanded="true" />
-            <element signature="e#1886#1887#0" expanded="true" />
+            <element signature="e#1922#1923#0" expanded="false" />
+            <element signature="e#1959#1960#0" expanded="false" />
             <element signature="method#climbArray#0;class#dataArrays#0" expanded="false" />
             <element signature="method#climbFill#0;class#dataArrays#0" expanded="false" />
             <element signature="method#descentArray#0;class#dataArrays#0" expanded="false" />
@@ -880,9 +1041,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="264" column="68" selection-start-line="264" selection-start-column="68" selection-end-line="264" selection-end-column="68" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#cruiseArray#0;class#dataArrays#0" expanded="false" />
-            <element signature="e#1851#1852#0" expanded="true" />
-            <element signature="e#1886#1887#0" expanded="true" />
+            <element signature="e#1922#1923#0" expanded="false" />
+            <element signature="e#1959#1960#0" expanded="false" />
             <element signature="method#climbArray#0;class#dataArrays#0" expanded="false" />
             <element signature="method#climbFill#0;class#dataArrays#0" expanded="false" />
             <element signature="method#descentArray#0;class#dataArrays#0" expanded="false" />
@@ -915,9 +1077,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#cruiseArray#0;class#dataArrays#0" expanded="false" />
-            <element signature="e#1851#1852#0" expanded="true" />
-            <element signature="e#1886#1887#0" expanded="true" />
+            <element signature="e#1922#1923#0" expanded="false" />
+            <element signature="e#1959#1960#0" expanded="false" />
             <element signature="method#climbArray#0;class#dataArrays#0" expanded="false" />
             <element signature="method#climbFill#0;class#dataArrays#0" expanded="false" />
             <element signature="method#descentArray#0;class#dataArrays#0" expanded="false" />
@@ -950,9 +1113,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#cruiseArray#0;class#dataArrays#0" expanded="false" />
-            <element signature="e#1851#1852#0" expanded="true" />
-            <element signature="e#1886#1887#0" expanded="true" />
+            <element signature="e#1922#1923#0" expanded="false" />
+            <element signature="e#1959#1960#0" expanded="false" />
             <element signature="method#climbArray#0;class#dataArrays#0" expanded="false" />
             <element signature="method#climbFill#0;class#dataArrays#0" expanded="false" />
             <element signature="method#descentArray#0;class#dataArrays#0" expanded="false" />
@@ -999,6 +1163,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
           <folding>
+<<<<<<< HEAD
             <element signature="method#serialize#0;class#ser#0" expanded="false" />
             <element signature="method#deserializeWeight#0;class#ser#0" expanded="false" />
             <element signature="method#serializeClimb#0;class#ser#0" expanded="false" />
@@ -1007,6 +1172,10 @@
             <element signature="method#serializeWeightlimits#0;class#ser#0" expanded="false" />
             <element signature="method#serializeWaypoints#0;class#ser#0" expanded="false" />
             <element signature="method#serializeFile#0;class#ser#0" expanded="false" />
+=======
+            <element signature="e#244#245#0" expanded="false" />
+            <element signature="e#280#281#0" expanded="false" />
+>>>>>>> origin/master
           </folding>
         </state>
       </provider>
@@ -1058,6 +1227,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
           <folding>
+<<<<<<< HEAD
             <element signature="method#serialize#0;class#ser#0" expanded="false" />
             <element signature="method#deserializeWeight#0;class#ser#0" expanded="false" />
             <element signature="method#serializeClimb#0;class#ser#0" expanded="false" />
@@ -1066,6 +1236,10 @@
             <element signature="method#serializeWeightlimits#0;class#ser#0" expanded="false" />
             <element signature="method#serializeWaypoints#0;class#ser#0" expanded="false" />
             <element signature="method#serializeFile#0;class#ser#0" expanded="false" />
+=======
+            <element signature="e#244#245#0" expanded="false" />
+            <element signature="e#280#281#0" expanded="false" />
+>>>>>>> origin/master
           </folding>
         </state>
       </provider>
@@ -1085,6 +1259,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <element signature="method#serialize#0;class#ser#0" expanded="false" />
             <element signature="method#deserializeWeight#0;class#ser#0" expanded="false" />
             <element signature="method#serializeClimb#0;class#ser#0" expanded="false" />
@@ -1093,6 +1268,10 @@
             <element signature="method#serializeWeightlimits#0;class#ser#0" expanded="false" />
             <element signature="method#serializeWaypoints#0;class#ser#0" expanded="false" />
             <element signature="method#serializeFile#0;class#ser#0" expanded="false" />
+=======
+            <element signature="e#244#245#0" expanded="false" />
+            <element signature="e#280#281#0" expanded="false" />
+>>>>>>> origin/master
           </folding>
         </state>
       </provider>
@@ -1112,6 +1291,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <element signature="method#serialize#0;class#ser#0" expanded="false" />
             <element signature="method#deserializeWeight#0;class#ser#0" expanded="false" />
             <element signature="method#serializeClimb#0;class#ser#0" expanded="false" />
@@ -1120,6 +1300,10 @@
             <element signature="method#serializeWeightlimits#0;class#ser#0" expanded="false" />
             <element signature="method#serializeWaypoints#0;class#ser#0" expanded="false" />
             <element signature="method#serializeFile#0;class#ser#0" expanded="false" />
+=======
+            <element signature="e#244#245#0" expanded="false" />
+            <element signature="e#280#281#0" expanded="false" />
+>>>>>>> origin/master
           </folding>
         </state>
       </provider>
@@ -1139,6 +1323,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
           <folding>
+<<<<<<< HEAD
             <element signature="method#serialize#0;class#ser#0" expanded="false" />
             <element signature="method#deserializeWeight#0;class#ser#0" expanded="false" />
             <element signature="method#serializeClimb#0;class#ser#0" expanded="false" />
@@ -1147,6 +1332,10 @@
             <element signature="method#serializeWeightlimits#0;class#ser#0" expanded="false" />
             <element signature="method#serializeWaypoints#0;class#ser#0" expanded="false" />
             <element signature="method#serializeFile#0;class#ser#0" expanded="false" />
+=======
+            <element signature="e#244#245#0" expanded="false" />
+            <element signature="e#280#281#0" expanded="false" />
+>>>>>>> origin/master
           </folding>
         </state>
       </provider>
@@ -1166,6 +1355,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
           <folding>
+<<<<<<< HEAD
             <element signature="method#serialize#0;class#ser#0" expanded="false" />
             <element signature="method#deserializeWeight#0;class#ser#0" expanded="false" />
             <element signature="method#serializeClimb#0;class#ser#0" expanded="false" />
@@ -1174,6 +1364,10 @@
             <element signature="method#serializeWeightlimits#0;class#ser#0" expanded="false" />
             <element signature="method#serializeWaypoints#0;class#ser#0" expanded="false" />
             <element signature="method#serializeFile#0;class#ser#0" expanded="false" />
+=======
+            <element signature="e#244#245#0" expanded="false" />
+            <element signature="e#280#281#0" expanded="false" />
+>>>>>>> origin/master
           </folding>
         </state>
       </provider>
@@ -1206,18 +1400,89 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Distance/weightLimit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17094973">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/Data/climbData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Data/cruiseData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Data/dataArrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="78" column="11" selection-start-line="78" selection-start-column="11" selection-end-line="78" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#cruiseArray#0;class#dataArrays#0" expanded="false" />
+            <element signature="e#1922#1923#0" expanded="false" />
+            <element signature="e#1959#1960#0" expanded="false" />
+            <element signature="method#climbArray#0;class#dataArrays#0" expanded="false" />
+            <element signature="method#climbFill#0;class#dataArrays#0" expanded="false" />
+            <element signature="method#descentArray#0;class#dataArrays#0" expanded="false" />
+            <element signature="method#descentFill#0;class#dataArrays#0" expanded="false" />
+            <element signature="method#weightLimitsArray#0;class#dataArrays#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Distance/cruisePerformance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#745#746#0" expanded="false" />
+            <element signature="e#780#781#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+          <folding>
+            <element signature="e#244#245#0" expanded="false" />
+            <element signature="e#280#281#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Distance/descent.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="73" selection-start-line="22" selection-start-column="73" selection-end-line="22" selection-end-column="73" />
+>>>>>>> origin/master
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/Distance/descent.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.018994413">
           <caret line="22" column="73" selection-start-line="22" selection-start-column="73" selection-end-line="22" selection-end-column="73" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/Data/weightLimitsData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
@@ -1230,42 +1495,103 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/io/ObjectOutputStream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="347" column="0" selection-start-line="347" selection-start-column="0" selection-end-line="347" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/Distance/weightLimit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Data/dataArrays.java">
+    <entry file="file://$PROJECT_DIR$/src/Distance/climb.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="11" selection-start-line="78" selection-start-column="11" selection-end-line="78" selection-end-column="11" />
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
           <folding>
-            <element signature="method#cruiseArray#0;class#dataArrays#0" expanded="false" />
-            <element signature="e#1851#1852#0" expanded="true" />
-            <element signature="e#1886#1887#0" expanded="true" />
-            <element signature="method#climbArray#0;class#dataArrays#0" expanded="false" />
-            <element signature="method#climbFill#0;class#dataArrays#0" expanded="false" />
-            <element signature="method#descentArray#0;class#dataArrays#0" expanded="false" />
-            <element signature="method#descentFill#0;class#dataArrays#0" expanded="false" />
-            <element signature="method#weightLimitsArray#0;class#dataArrays#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33286318">
+          <caret line="761" column="0" selection-start-line="761" selection-start-column="0" selection-end-line="761" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/PQHeap/Element.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding />
+>>>>>>> origin/master
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PQHeap/PQ.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="0.023977432">
+          <caret line="26" column="98" selection-start-line="26" selection-start-column="98" selection-end-line="26" selection-end-column="98" />
+=======
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+>>>>>>> origin/master
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/Distance/readPaths.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="27" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/Distance/coordinate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PQHeap/PQHeap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+            <element signature="e#420#421#0" expanded="true" />
+            <element signature="e#2736#2737#0" expanded="true" />
+            <element signature="e#2781#2782#0" expanded="true" />
+            <element signature="e#2958#2959#0" expanded="true" />
+            <element signature="e#3002#3003#0" expanded="true" />
+            <element signature="e#3181#3182#0" expanded="true" />
+            <element signature="e#3227#3228#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33286318">
-          <caret line="761" column="0" selection-start-line="761" selection-start-column="0" selection-end-line="761" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Distance/climb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.023977432">
-          <caret line="26" column="98" selection-start-line="26" selection-start-column="98" selection-end-line="26" selection-end-column="98" />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="105" column="13" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1273,7 +1599,8 @@
     <entry file="file://$PROJECT_DIR$/src/Distance/readPaths.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="27" />
+          <caret line="399" column="0" selection-start-line="399" selection-start-column="0" selection-end-line="399" selection-end-column="0" />
+>>>>>>> origin/master
           <folding>
             <element signature="docComment;class#readPaths#0" expanded="false" />
             <element signature="docComment;method#waypoints#0;class#readPaths#0" expanded="false" />
@@ -1302,6 +1629,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Data/cruiseData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1339,6 +1667,15 @@
         <state vertical-scroll-proportion="0.28490832">
           <caret line="146" column="3" selection-start-line="146" selection-start-column="1" selection-end-line="146" selection-end-column="3" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/src/Dijkstra.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2724359">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>

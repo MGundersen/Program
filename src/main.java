@@ -26,7 +26,7 @@ public class main {
         ser ez = new ser(output);
 
         //Behøver kun serialize 1 gang, med mindre der er sket ændringer i data'erne
-        //ez.serialize(input);
+        ez.serialize(input);
 
 
         //Ligger info fra vores forskellige .ser filer ind i files
