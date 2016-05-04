@@ -25,7 +25,7 @@ public class readPaths {
      * @param file a file containing flight path data
      */
 
-    private List<coordinate> waypoints(File file){
+    public List<coordinate> waypoints(File file){
 
         try{
             BufferedReader br = new BufferedReader(new FileReader(file));

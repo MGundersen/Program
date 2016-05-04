@@ -1,9 +1,11 @@
 package Data;
 
+import java.io.Serializable;
+
 /**
  * Created by MGund on 5/1/2016.
  */
-public class climbData {
+public class climbData implements Serializable{
 
     public double Distance;
     public double Time;

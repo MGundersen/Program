@@ -1,9 +1,11 @@
 package Data;
 
+import java.io.Serializable;
+
 /**
  * Created by MGund on 5/1/2016.
  */
-public class cruiseData {
+public class cruiseData implements Serializable {
     public double FuelFlow;
     public double Speed;
 

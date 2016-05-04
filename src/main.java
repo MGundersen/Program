@@ -1,8 +1,11 @@
 import Data.*;
+import Distance.coordinate;
 
 import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by MGund on 4/24/2016.
@@ -27,13 +30,19 @@ public class main {
 
 
         //Ligger info fra vores forskellige .ser filer ind i files
-        File climbSer = ez.deserialize( "climb.csv" );
-        File cruiseSer = ez.deserialize( "cruise.csv" );
-        File descentSer = ez.deserialize( "descent.csv" );
-        File weightlimitsSer = ez.deserialize( "weightlimits.csv" );
-        //File EBBRESSA138 = ez.deserialize( "EBBR-ESSA-138.txt" );
+        climbData[][] climbArray = (climbData[][]) ez.deserializeData( "climb.csv" );
+        //cruiseData[][] cruiseArray = (cruiseData[][]) ez.deserializeData( "cruise.csv" );
+        descentData[][] descentArray = (descentData[][]) ez.deserializeData( "descent.csv" );
+        weightLimitsData[] weightlimitsArray = (weightLimitsData[]) ez.deserializeWeight( "weightlimits.csv" );
+        List EBBRESSA138Array = (List) ez.deserializeRoute( "EBBR-ESSA-138.txt" );
 
 
+
+        //List<climbData> list = (List<climbData>) climbSer;
+        //System.out.println( climbArray[1][1].Fuel );
+
+
+        /*
         dataArrays d = new dataArrays();
 
         cruiseData[][] cruiseList = d.cruiseFill(cruiseSer);
@@ -51,8 +60,8 @@ public class main {
         weightLimitsData[] weightLimitList = d.weightLimitsFill(weightlimitsSer);
 
         System.out.println( "Weightlimit[0]: " + weightLimitList[0].weight );
+        */
 
 
-        
     }
 }
