@@ -18,14 +18,15 @@ import java.util.List;
 public class readPaths {
 
 
-
+    climb climb = new climb();
+    cruisePerformance cruise = new cruisePerformance();
 
     /**
      * returns a list of coordinates
      * @param file a file containing flight path data
      */
 
-    private List<coordinate> waypoints(File file){
+    public List<coordinate> waypoints(File file){
 
         try{
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -73,7 +74,7 @@ public class readPaths {
      * @nMile constant used to convert meters to nautical miles
      */
 
-    //lat is latitude, long is longitude
+    // lat is latitude, long is longitude
     private double deltaAdjacentWaypoint(coordinate c1, coordinate c2){
 
         double lat1, lat2;
@@ -114,8 +115,7 @@ public class readPaths {
      * @return
      * @throws Exception if none of the given coordinates exist as waypoints in the specified route
      */
-    public double deltaWaypoint(File file, coordinate c1, coordinate c2) throws Exception {
-        List<coordinate> coordinates = waypoints(file);
+    public double deltaWaypoint(List<coordinate> coordinates, coordinate c1, coordinate c2) throws Exception {
 
         int index1 = -1;                                        //index for c1
         int index2 = -1;                                        //index for c2
@@ -160,8 +160,7 @@ public class readPaths {
      * @param file a file containing flight path data
      * @return
      */
-    public double distanceRoute(File file){
-        List<coordinate> coordinates = waypoints(file);
+    public double distanceRoute(List<coordinate> coordinates){
 
         coordinate waypoint1 = coordinates.get(0);
         coordinate waypoint2;
@@ -194,7 +193,6 @@ public class readPaths {
      * @return
      */
     private int largestClimbAdjacent(File route, climbData[][] climbData, coordinate c1, coordinate c2, int FL_from, int ISA, int weight) {
-        climb climb = new climb();
 
         double maxDistance = deltaAdjacentWaypoint(c1, c2);
 
@@ -242,8 +240,6 @@ public class readPaths {
      */
     public List<coordinateAndFL> climbRoute(File route, climbData[][] climbData, coordinate c1, int FL_from, int FL_to, int ISA, int weight) {
         List<coordinateAndFL> result = new ArrayList<>();
-
-        climb climb = new climb();
 
         List<coordinate> coordinates = waypoints(route);
 
@@ -311,8 +307,6 @@ public class readPaths {
      * @return
      */
     private double fuelAdjacentClimb(climbData[][] climbData, cruiseData[][] cruiseData, coordinate c1, coordinate c2, int FL_from, int FL_to, int ISA, int weight){
-        climb climb = new climb();
-        cruisePerformance cruise = new cruisePerformance();
         double climbFuel = climb.fuelClimb(climbData, FL_from, FL_to, ISA, weight);
         double climbDistance = climb.distanceClimb(climbData, FL_from, FL_to, ISA, weight);
         double cruiseFuel = cruise.fuelCruise(cruiseData, FL_to, ISA, weight);
@@ -376,8 +370,6 @@ public class readPaths {
      * @return
      */
     private double timeAdjacentClimb(climbData[][] climbData, cruiseData[][] cruiseData, coordinate c1, coordinate c2, int FL_from, int FL_to, int ISA, int weight){
-        climb climb = new climb();
-        cruisePerformance cruise = new cruisePerformance();
 
         double climbTime = climb.timeClimb(climbData, FL_from, FL_to, ISA, weight);
         double climbDistance = climb.distanceClimb(climbData, FL_from, FL_to, ISA, weight);
