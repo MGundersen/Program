@@ -27,7 +27,7 @@ public class descent {
      * @param weight weight of the aircraft
      * @return
      */
-    public double distanceDescent( descentData[][] array, int FL_from, int FL_to, int ISA, int weight ) throws Exception {
+    public double distanceDescent( descentData[][] array, int FL_from, int FL_to, int ISA, int weight ){
         descentData FL1;
         descentData FL2;
 
@@ -47,7 +47,7 @@ public class descent {
      * @param weight weight of the aircraft
      * @return
      */
-    public double timeDescent(descentData[][] array, int FL_from, int FL_to, int ISA, int weight ) throws Exception {
+    public double timeDescent(descentData[][] array, int FL_from, int FL_to, int ISA, int weight ){
         descentData FL1;
         descentData FL2;
 
@@ -67,7 +67,7 @@ public class descent {
      * @param weight weight of the aircraft
      * @return
      */
-    public double fuelDescent( descentData[][] array, int FL_from, int FL_to, int ISA, int weight ) throws Exception {
+    public double fuelDescent( descentData[][] array, int FL_from, int FL_to, int ISA, int weight ){
         descentData FL1;
         descentData FL2;
 

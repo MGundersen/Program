@@ -2,6 +2,7 @@ package Distance;
 
 import Data.climbData;
 import Data.cruiseData;
+import Data.descentData;
 import Distance.climb;
 import Distance.coordinate;
 
@@ -19,6 +20,7 @@ public class readPaths {
 
 
     climb climb = new climb();
+    descent descent = new descent();
     cruisePerformance cruise = new cruisePerformance();
 
     /**
@@ -192,7 +194,7 @@ public class readPaths {
      * @param weight weight of the aircraft
      * @return
      */
-    private int largestClimbAdjacent(File route, climbData[][] climbData, coordinate c1, coordinate c2, int FL_from, int ISA, int weight) {
+    public int largestClimbAdjacent(File route, climbData[][] climbData, coordinate c1, coordinate c2, int FL_from, int ISA, int weight) {
 
         double maxDistance = deltaAdjacentWaypoint(c1, c2);
 
@@ -204,6 +206,23 @@ public class readPaths {
             FL_max = FL_max + 10;
         }
 
+        if(FL_to == FL_from){
+            return FL_to;
+        }
+
+        return FL_max;
+    }
+
+    public int largestDescentAdjacent(File route, descentData[][] descentData, coordinate c1, coordinate c2, int FL_from, int ISA, int weight){
+        double maxDistance = deltaAdjacentWaypoint(c1, c2);
+
+        int FL_to = FL_from;
+        int FL_max = FL_from - 10;
+
+        while(descent.distanceDescent(descentData, FL_from, FL_to, ISA, weight) <= maxDistance) {
+            FL_to = FL_to + 10;
+            FL_max = FL_max + 10;
+        }
         if(FL_to == FL_from){
             return FL_to;
         }
