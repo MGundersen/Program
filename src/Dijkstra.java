@@ -1,3 +1,5 @@
+import Data.climbData;
+import Data.descentData;
 import Distance.*;
 import PQHeap.*;
 
@@ -12,16 +14,35 @@ public class Dijkstra {
     List<coordinate> coordinates;
     PQHeap heap;
 
-    private double fuelTo
+    //private double fuelTo
 
     public Dijkstra(File path, int heapSize){
         coordinates = p.waypoints(path);
         heap = new PQHeap(heapSize);
     }
 
+    public void giveCoordinates (climbData[][] climbDatas, descentData[][] descentDatas) {
 
-    private void initializeSingleSource(List<coordinate> coordinates){
+        coordinate coordinateFROM = coordinates.get(0);
+        coordinate coordinateTO = coordinates.get(20);
+        System.out.println( coordinateFROM.getLongitude() + ":" + coordinateFROM.getLatitude() );
+        System.out.println( coordinateTO.getLongitude() + ":" + coordinateTO.getLatitude() );
+
+
+        initializeSingleSource(climbDatas,descentDatas,coordinateFROM,coordinateTO,0,2);
+    }
+
+
+    public void initializeSingleSource(climbData[][] climbDatas, descentData[][] descentDatas, coordinate coordinateFROM, coordinate coordinateTO, Integer FL, Integer weight){
         int clistSize = coordinates.size();
+
+        Integer maxFL = p.largestClimbAdjacent(climbDatas,coordinateFROM,coordinateTO,FL,0,weight);
+
+        Integer minFL = p.largestDescentAdjacent(descentDatas, coordinateFROM,coordinateTO,FL,0,weight);
+
+        Integer FLRange = maxFL - minFL;
+
+        System.out.println( "From -" + minFL + " to " + maxFL );
 
     }
 }

@@ -34,7 +34,7 @@ public class descent {
         FL1 = array[FL_from][weight];
         FL2 = array[FL_to][weight];
 
-        return FL1.Distance-FL2.Distance;
+        return FL2.Distance-FL1.Distance;
     }
 
     /**

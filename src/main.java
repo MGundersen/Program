@@ -1,10 +1,8 @@
 import Data.*;
-import Distance.coordinate;
 
-import java.io.*;
+import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,17 +14,17 @@ public class main {
     public static void main(String[] args) {
 
         //Kasper's paths
-        Path input = Paths.get( "C:\\Users\\Kasper\\flight paths\\Data\\ACP\\Falcon 7x" );
-        Path output = Paths.get( "C:\\Users\\Kasper\\flight paths\\Data\\" );
+        //Path input = Paths.get( "C:\\Users\\Kasper\\flight paths\\Data\\ACP\\Falcon 7x" );
+        //Path output = Paths.get( "C:\\Users\\Kasper\\flight paths\\Data\\" );
 
         //Mathias' paths
-        //Path input = Paths.get( "D:\\Documents 2\\Data" );
-        //Path output = Paths.get( "C:\\Users\\MGund\\OneDrive\\Studie\\Datalogi 2016\\Førsteårsprojekt\\Program\\Data\\" );
+        Path input = Paths.get( "D:\\Documents 2\\Data" );
+        Path output = Paths.get( "C:\\Users\\MGund\\OneDrive\\Studie\\Datalogi 2016\\Førsteårsprojekt\\Program\\Data\\" );
 
         ser ez = new ser(output);
 
         //Behøver kun serialize 1 gang, med mindre der er sket ændringer i data'erne
-        ez.serialize(input);
+        //ez.serialize(input);
 
 
         //Ligger info fra vores forskellige .ser filer ind i files
@@ -34,12 +32,21 @@ public class main {
         descentData[][] descentArray = (descentData[][]) ez.deserializeData( "descent.csv" );
         cruiseData[][] cruiseArray = (cruiseData[][]) ez.deserializeData( "cruise.csv" );
         weightLimitsData[] weightlimitsArray = (weightLimitsData[]) ez.deserializeWeight( "weightlimits.csv" );
-        //List EBBRESSA138Array = (List) ez.deserializeRoute( "EBBR-ESSA-138.txt" );
+        List EBBRESSA138Array = (List) ez.deserializeRoute( "EBBR-ESSA-138.txt" );
+
+        File route1 = new File( "D:\\Documents 2\\Data\\Route\\EBBR-VABB-40.txt" );
 
 
 
         //List<climbData> list = (List<climbData>) climbSer;
         //System.out.println( climbArray[1][1].Fuel );
+
+        Dijkstra dijkstra = new Dijkstra(route1,100);
+
+        dijkstra.giveCoordinates(climbArray,descentArray);
+
+
+
 
 
         /*

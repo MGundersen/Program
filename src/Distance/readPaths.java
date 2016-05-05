@@ -194,7 +194,7 @@ public class readPaths {
      * @param weight weight of the aircraft
      * @return
      */
-    public int largestClimbAdjacent(File route, climbData[][] climbData, coordinate c1, coordinate c2, int FL_from, int ISA, int weight) {
+    public int largestClimbAdjacent(climbData[][] climbData, coordinate c1, coordinate c2, int FL_from, int ISA, int weight) {
 
         double maxDistance = deltaAdjacentWaypoint(c1, c2);
 
@@ -202,32 +202,32 @@ public class readPaths {
         int FL_max = FL_from - 10;
 
         while(climb.distanceClimb(climbData, FL_from, FL_to, ISA, weight) <= maxDistance) {
-            FL_to = FL_to + 10;
-            FL_max = FL_max + 10;
+            FL_to++;
+            FL_max++;
         }
 
         if(FL_to == FL_from){
-            return FL_to;
+            return FL_to * 10;
         }
 
-        return FL_max;
+        return FL_max * 10;
     }
 
-    public int largestDescentAdjacent(File route, descentData[][] descentData, coordinate c1, coordinate c2, int FL_from, int ISA, int weight){
+    public int largestDescentAdjacent(descentData[][] descentData, coordinate c1, coordinate c2, int FL_from, int ISA, int weight){
         double maxDistance = deltaAdjacentWaypoint(c1, c2);
 
         int FL_to = FL_from;
         int FL_max = FL_from - 10;
 
         while(descent.distanceDescent(descentData, FL_from, FL_to, ISA, weight) <= maxDistance) {
-            FL_to = FL_to + 10;
-            FL_max = FL_max + 10;
+            FL_to++;
+            FL_max++;
         }
         if(FL_to == FL_from){
-            return FL_to;
+            return FL_to * 10;
         }
 
-        return FL_max;
+        return FL_max * 10;
     }
 
     /**
@@ -283,7 +283,7 @@ public class readPaths {
         coordinate waypoint2 = coordinates.get(index2);
 
         //if FL_to can be reached by flying from waypoint1 to the adjacent waypoint2
-        if ( FL_to <= largestClimbAdjacent(route, climbData, waypoint1, waypoint2, FL_from, ISA, weight) ){
+        if ( FL_to <= largestClimbAdjacent(climbData, waypoint1, waypoint2, FL_from, ISA, weight) ){
             result.add( new coordinateAndFL( waypoint2, FL_to ) );
             return result;
         }
@@ -292,7 +292,7 @@ public class readPaths {
 
         //else plan a flight route
         //adds every waypoint but the last
-        while( FL_to > (current_FL = largestClimbAdjacent(route, climbData, waypoint1, waypoint2, FL_from, ISA, weight) ) ){
+        while( FL_to > (current_FL = largestClimbAdjacent(climbData, waypoint1, waypoint2, FL_from, ISA, weight) ) ){
             result.add( new coordinateAndFL( waypoint2, current_FL ) );
 
             index1++;
