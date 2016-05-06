@@ -24,9 +24,9 @@ public class Dijkstra {
     public void giveCoordinates (climbData[][] climbDatas, descentData[][] descentDatas) {
 
         coordinate coordinateFROM = coordinates.get(0);
-        coordinate coordinateTO = coordinates.get(20);
-        System.out.println( coordinateFROM.getLongitude() + ":" + coordinateFROM.getLatitude() );
-        System.out.println( coordinateTO.getLongitude() + ":" + coordinateTO.getLatitude() );
+        coordinate coordinateTO = coordinates.get(3);
+        System.out.println( "From " + coordinateFROM.getLongitude() + ":" + coordinateFROM.getLatitude() );
+        System.out.println( "To " + coordinateTO.getLongitude() + ":" + coordinateTO.getLatitude() );
 
 
         initializeSingleSource(climbDatas,descentDatas,coordinateFROM,coordinateTO,0,2);

@@ -199,35 +199,34 @@ public class readPaths {
         double maxDistance = deltaAdjacentWaypoint(c1, c2);
 
         int FL_to = FL_from;
-        int FL_max = FL_from - 10;
 
-        while(climb.distanceClimb(climbData, FL_from, FL_to, ISA, weight) <= maxDistance) {
+        while( FL_to <= 49 && climb.distanceClimb(climbData, FL_from, FL_to, ISA, weight) <= maxDistance) {
             FL_to++;
-            FL_max++;
         }
-
         if(FL_to == FL_from){
             return FL_to * 10;
+        } else if (FL_to == 50) {
+            return (FL_to - 1) * 10;
         }
 
-        return FL_max * 10;
+        return (FL_to - 1) * 10;
     }
 
     public int largestDescentAdjacent(descentData[][] descentData, coordinate c1, coordinate c2, int FL_from, int ISA, int weight){
         double maxDistance = deltaAdjacentWaypoint(c1, c2);
 
         int FL_to = FL_from;
-        int FL_max = FL_from - 10;
 
-        while(descent.distanceDescent(descentData, FL_from, FL_to, ISA, weight) <= maxDistance) {
-            FL_to++;
-            FL_max++;
+        while(FL_to <= 49 && descent.distanceDescent(descentData, FL_from, FL_to, ISA, weight) <= maxDistance) {
+                FL_to++;
         }
         if(FL_to == FL_from){
-            return FL_to * 10;
+            return FL_to;
+        } else if (FL_to == 50) {
+            return (FL_to - 1) * 10;
         }
 
-        return FL_max * 10;
+        return (FL_to - 1) * 10;
     }
 
     /**
