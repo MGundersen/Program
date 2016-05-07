@@ -1,8 +1,10 @@
 import Data.*;
+import Dijkstra.*;
 
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -47,7 +49,17 @@ public class main {
 
         Dijkstra dijkstra = new Dijkstra(route1,100);
 
-        dijkstra.giveCoordinates(climbArray,descentArray);
+//        dijkstra.giveCoordinates(climbArray,descentArray);
+
+        List<vertex> graphList = new ArrayList<>();
+
+        graphList.add(new vertex(1, 1));
+        graphList.add(new vertex(7, 2));
+        graphList.add(new vertex(5, 3));
+        graphList.add(new vertex(2, 3));
+        graphList.add(new vertex(4, 1));
+
+        dijkstra.Dijkkstra_algorithm(graphList, graphList.get(0));
 
 
         /*

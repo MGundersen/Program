@@ -1,6 +1,7 @@
 package PQHeap;
+import Dijkstra.vertex;
 
 public interface PQ {
-    public Element extractMin();
-    public void insert (Element e);
+    public vertex extractMin();
+    public void insert (vertex e);
 }
