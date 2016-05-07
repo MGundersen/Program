@@ -1,0 +1,24 @@
+14-04-2015 11:00:42
+EDDG
+GCTS
+6841,77564924569
+Waypoint;51,7095;7,5871
+Waypoint;51,4250;7,2806
+Waypoint;50,7500;6,0333
+Waypoint;50,5859;5,7103
+Waypoint;49,9750;4,5667
+Waypoint;49,1883;3,0565
+Waypoint;49,0961;2,0359
+Waypoint;48,7447;0,8892
+Waypoint;48,3625;-0,0425
+Waypoint;48,2597;-0,2500
+Waypoint;47,5997;-1,5175
+Waypoint;47,3489;-1,9289
+Waypoint;46,8600;-2,3631
+Waypoint;45,0842;-3,8672
+Waypoint;44,4125;-4,4361
+Waypoint;41,7005;-6,6218
+Waypoint;35,9667;-11,4483
+Waypoint;34,2611;-12,9117
+Waypoint;32,9975;-13,9550
+Waypoint;31,3008;-15,3017

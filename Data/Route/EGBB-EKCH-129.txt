@@ -1,0 +1,20 @@
+14-04-2015 11:00:44
+EGBB
+EKCH
+480,106614811894
+Waypoint;52,1801;-1,1138
+Waypoint;52,3578;-0,2325
+Waypoint;52,3561;0,0297
+Waypoint;52,3478;0,7825
+Waypoint;52,3356;1,5053
+Waypoint;52,3278;1,8711
+Waypoint;52,3072;2,6440
+Waypoint;52,3986;3,1668
+Waypoint;52,5978;4,3644
+Waypoint;53,0316;5,3885
+Waypoint;53,5396;6,6431
+Waypoint;53,6781;6,9967
+Waypoint;54,1857;7,9107
+Waypoint;54,6336;8,7575
+Waypoint;54,8586;9,1942
+Waypoint;55,2758;10,6478

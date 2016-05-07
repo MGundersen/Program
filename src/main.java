@@ -13,42 +13,41 @@ public class main {
 
     public static void main(String[] args) {
 
-        //Kasper's paths
+        // Kasper's paths
         //Path input = Paths.get( "C:\\Users\\Kasper\\flight paths\\Data\\ACP\\Falcon 7x" );
         //Path output = Paths.get( "C:\\Users\\Kasper\\flight paths\\Data\\" );
 
-        //Mathias' paths
-        Path input = Paths.get( "D:\\Documents 2\\Data" );
-        Path output = Paths.get( "C:\\Users\\MGund\\OneDrive\\Studie\\Datalogi 2016\\Førsteårsprojekt\\Program\\Data\\" );
+        // Mathias' paths
+        //Path input = Paths.get( "D:\\Documents 2\\Data" );
+        //Path output = Paths.get( "C:\\Users\\MGund\\OneDrive\\Studie\\Datalogi 2016\\Førsteårsprojekt\\Program\\Data\\" );
+
+        // Daniel's paths
+        Path input = Paths.get( "C:\\Users\\Danie\\OneDrive\\Dokumenter\\Data\\Data\\ACP\\Falcon 7x" );
+        Path output = Paths.get( "C:\\Users\\Danie\\Documents\\GitHub\\Program\\Data\\" );
 
         ser ez = new ser(output);
 
-        //Behøver kun serialize 1 gang, med mindre der er sket ændringer i data'erne
-        //ez.serialize(input);
+        // Behøver kun serialize 1 gang, med mindre der er sket ændringer i data'erne
+        // ez.serialize(input);
 
 
-        //Ligger info fra vores forskellige .ser filer ind i files
+        // Ligger info fra vores forskellige .ser filer ind i files
         climbData[][] climbArray = (climbData[][]) ez.deserializeData( "climb.csv" );
         descentData[][] descentArray = (descentData[][]) ez.deserializeData( "descent.csv" );
         cruiseData[][] cruiseArray = (cruiseData[][]) ez.deserializeData( "cruise.csv" );
         weightLimitsData[] weightlimitsArray = (weightLimitsData[]) ez.deserializeWeight( "weightlimits.csv" );
         List EBBRESSA138Array = (List) ez.deserializeRoute( "EBBR-ESSA-138.txt" );
 
-        File route1 = new File( "D:\\Documents 2\\Data\\Route\\EBBR-VABB-40.txt" );
+        File route1 = new File( "C:\\Users\\Danie\\Documents\\GitHub\\Program\\Data\\Route\\EBBR-VABB-40.txt" );
 
 
 
-        //List<climbData> list = (List<climbData>) climbSer;
-        //System.out.println( climbArray[1][1].Fuel );
+        // List<climbData> list = (List<climbData>) climbSer;
+        // System.out.println( climbArray[1][1].Fuel );
 
         Dijkstra dijkstra = new Dijkstra(route1,100);
 
         dijkstra.giveCoordinates(climbArray,descentArray);
-
-
-
-
-
 
 
         /*

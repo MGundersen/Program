@@ -1,0 +1,6 @@
+tid = 1000$ pr time
+fuel = 3$ pr gallon
+
+fuel har en densitet på 6.2pund/gallon
+
+Bemærk at I er velkomne til at ændre på værdierne for at teste deres efffekt.

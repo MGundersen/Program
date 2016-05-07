@@ -1,0 +1,27 @@
+14-04-2015 10:57:14
+LEMD
+LIRF
+6625,77409396561
+Waypoint;39,8262;-1,4808
+Waypoint;39,7793;-1,2846
+Waypoint;39,5492;-1,1498
+Waypoint;39,2826;-0,5444
+Waypoint;39,3316;0,4313
+Waypoint;39,3726;1,4108
+Waypoint;39,4061;2,4174
+Waypoint;39,8636;4,2161
+Waypoint;39,9567;4,6667
+Waypoint;39,9781;4,7714
+Waypoint;40,1581;5,5600
+Waypoint;40,2661;6,0561
+Waypoint;40,5639;7,4828
+Waypoint;40,6081;8,0000
+Waypoint;40,6282;8,2438
+Waypoint;40,6456;8,4614
+Waypoint;40,6658;8,7231
+Waypoint;40,6769;8,8672
+Waypoint;40,7181;9,4411
+Waypoint;40,7283;9,5803
+Waypoint;40,7506;9,9111
+Waypoint;40,8297;11,2172
+Waypoint;41,3847;11,7947

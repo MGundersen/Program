@@ -1,0 +1,10 @@
+Formatet for AC Tabel Data
+ 
+·       Climb/Descent
+"FLIGHTLEVEL; ISA; WEIGHT (Pund); DISTANCE (NM); TOTAL TIME (Minuter); TOTAL FUEL (Pund)"
+ 
+·       Cruise
+"FLIGHT LEVEL; ISA; WEIGHT (Pund); FUEL (Pund per time); SPEED (Knots)"
+ 
+·       Weight limitations
+"FLIGHT LEVEL; ISA; WEIGHT (Pund)"

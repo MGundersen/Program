@@ -1,0 +1,8 @@
+Departure time
+Departure airport
+Destination airport
+Distance estimat
+First waypoint - latitude;longitude
+Second waypoint
+...
+Last waypoint
