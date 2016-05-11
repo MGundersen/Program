@@ -8,6 +8,7 @@ import PQHeap.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import Data.climbData;
 
 /**
  * Created by Kasper on 04-05-2016.
@@ -67,6 +68,13 @@ public class Dijkstra {
             v.setPredecessor(u);
         }
 
+    }
+
+
+
+    public void analyzeVertex(vertex s1, vertex s2, climbData[][] climbData, descentData[][] descentData, int ISA, int weight){
+        int max = p.largestClimbAdjacent(climbData, s1.getCoordinate(), s2.getCoordinate(), s1.getFL(), ISA, weight);
+        int min = p.largestDescentAdjacent(descentData, s1.getCoordinate(), s2.getCoordinate(), s1.getFL(), ISA, weight);
     }
 
     public void Dijkkstra_algorithm(List<vertex> graph, vertex s) {
