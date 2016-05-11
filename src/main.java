@@ -28,8 +28,8 @@ public class main {
         //Path output = Paths.get( "C:\\Users\\Danie\\Documents\\GitHub\\Program\\Data\\" );
 
         //Tim's Paths
-        Path input = Paths.get( "C:\\Users\\tim\\Desktop\\Data\\Data\\ACP\\Falcon 7x" );
-        Path output = Paths.get( "C:\\Users\\tim\\Documents\\GitHub\\Program\\Data\\" );
+        Path input = Paths.get( "C:\\Users\\Kasper\\Documents\\GitHub\\Program\\Program\\Data\\ACP\\Falcon 7x" );
+        Path output = Paths.get( "C:\\Users\\Kasper\\Documents\\GitHub\\Program\\Program\\Data");
 
         ser ez = new ser(output);
 
@@ -44,7 +44,7 @@ public class main {
         weightLimitsData[] weightlimitsArray = (weightLimitsData[]) ez.deserializeWeight( "weightlimits.csv" );
         List EBBRESSA138Array = (List) ez.deserializeRoute( "EBBR-ESSA-138.txt" );
 
-        File route1 = new File( "C:\\Users\\tim\\Documents\\GitHub\\Program\\Data\\Route\\EBBR-VABB-40.txt" );
+        File route1 = new File( "C:\\Users\\Kasper\\Documents\\GitHub\\Program\\Program\\Data\\Route\\EBBR-ESSA-138.txt" );
 
 
 

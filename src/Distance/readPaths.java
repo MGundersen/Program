@@ -111,7 +111,7 @@ public class readPaths {
 
     /**
      * returns the distance from a waypoint to another
-     * @param file file containing the specified route
+
      * @param c1 waypoint one
      * @param c2 waypoint 2
      * @return
@@ -159,7 +159,7 @@ public class readPaths {
 
     /**
      * calculates and returns the distance of a whole flight path
-     * @param file a file containing flight path data
+     * @param coordinates coordinates of a route
      * @return
      */
     public double distanceRoute(List<coordinate> coordinates){
@@ -185,7 +185,6 @@ public class readPaths {
      * FL_to is used to find the greatest flight level. this, however, can not be returned
      * since the while-loop stops as soon as distanceClimb for a FL_to is larger than maxDistance
      * therefore, the last checked flight level, FL_max, must be returned
-     * @param route file containing route data
      * @param climbData file containing Distance.climb data
      * @param c1 waypoint number one
      * @param c2 waypoint number two
@@ -246,7 +245,7 @@ public class readPaths {
      * if a plane wants to Distance.climb it might not be able to make it between just two waypoints.
      * this method returns a list of flight levels at coordinates.
      * in other words, gives a climbing route for the plane to reach a destined flight level.
-     * @param route
+     * @param coordinates the coordinates of a route
      * @param climbData
      * @param c1
      * @param FL_from
@@ -256,10 +255,8 @@ public class readPaths {
      * @return
      * @throws Exception
      */
-    public List<coordinateAndFL> climbRoute(File route, climbData[][] climbData, coordinate c1, int FL_from, int FL_to, int ISA, int weight) {
+    public List<coordinateAndFL> climbRoute(List<coordinate> coordinates, climbData[][] climbData, coordinate c1, int FL_from, int FL_to, int ISA, int weight) {
         List<coordinateAndFL> result = new ArrayList<>();
-
-        List<coordinate> coordinates = waypoints(route);
 
         int index1 = -1;                                        //index for c1
         int index2;                                             //index for c2
@@ -352,7 +349,7 @@ public class readPaths {
      * @return
      */
 
-    public double fuelClimbCruise(File route, climbData[][] climbData, cruiseData[][] cruiseData, coordinate c1, int FL_from, int FL_to, int ISA, int weight){
+    public double fuelClimbCruise(List<coordinate> route, climbData[][] climbData, cruiseData[][] cruiseData, coordinate c1, int FL_from, int FL_to, int ISA, int weight){
         List<coordinateAndFL> path = climbRoute(route, climbData, c1, FL_from, FL_to, ISA, weight);
         double result = 0;
 
@@ -415,7 +412,7 @@ public class readPaths {
      * @param weight weight
      * @return
      */
-    public double timeClimbCruise(File route, climbData[][] climbData, cruiseData[][] cruiseData, coordinate c1, int FL_from, int FL_to, int ISA, int weight){
+    public double timeClimbCruise(List<coordinate> route, climbData[][] climbData, cruiseData[][] cruiseData, coordinate c1, int FL_from, int FL_to, int ISA, int weight){
         List<coordinateAndFL> path = climbRoute(route, climbData, c1, FL_from, FL_to, ISA, weight);
         double result = 0;
 
