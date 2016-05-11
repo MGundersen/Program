@@ -3,18 +3,22 @@ package PQHeap;
 import Dijkstra.vertex;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 
 /**
  * Created by:
  * Kasper Skov Johansen (kajoh14@student.sdu.dk)
  * Morten Kristian Jaeger (mojae15@student.sdu.dk)
  */
-public class PQHeap implements PQ{
+public class PQHeap implements PQ {
 
     // Queue used for the heap
     public ArrayList<vertex> Queue;
 
-    //constructor
+    // Hashmap used for searching
+    private HashMap<FLandWP, vertex> hm = new HashMap<>();
+
+    // constructor
     public PQHeap(int MaxElements){
         this.Queue = new ArrayList<>(MaxElements);
     }
@@ -35,8 +39,8 @@ public class PQHeap implements PQ{
             return min;
         }catch(ArrayIndexOutOfBoundsException k){
             System.out.println("No elements in queue");
+            return null;
         }
-        return null;
     }
 
     /**
@@ -46,6 +50,8 @@ public class PQHeap implements PQ{
      */
     @Override
     public void insert(vertex e) {
+        FLandWP FLandWPKey = e.getFLandWP();
+        hm.put(FLandWPKey,e);
         int i = Queue.size();
         try {
             Queue.add(e);
@@ -56,6 +62,11 @@ public class PQHeap implements PQ{
             Collections.swap(Queue, i, Parent(i));
             i = Parent(i);
         }
+    }
+
+    @Override
+    public boolean search(FLandWP e) {
+        return hm.containsKey(e);
     }
 
     /**

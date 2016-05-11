@@ -20,21 +20,21 @@ public class main {
         //Path output = Paths.get( "C:\\Users\\Kasper\\flight paths\\Data\\" );
 
         // Mathias' paths
-        //Path input = Paths.get( "D:\\Documents 2\\Data" );
-        //Path output = Paths.get( "C:\\Users\\MGund\\OneDrive\\Studie\\Datalogi 2016\\Førsteårsprojekt\\Program\\Data\\" );
+        Path input = Paths.get( "D:\\Documents 2\\Data" );
+        Path output = Paths.get( "C:\\Users\\MGund\\Documents\\GitHub\\Program\\Data\\" );
 
         // Daniel's paths
         //Path input = Paths.get( "C:\\Users\\Danie\\OneDrive\\Dokumenter\\Data\\Data\\ACP\\Falcon 7x" );
         //Path output = Paths.get( "C:\\Users\\Danie\\Documents\\GitHub\\Program\\Data\\" );
 
         //Tim's Paths
-        Path input = Paths.get( "C:\\Users\\Kasper\\Documents\\GitHub\\Program\\Program\\Data\\ACP\\Falcon 7x" );
-        Path output = Paths.get( "C:\\Users\\Kasper\\Documents\\GitHub\\Program\\Program\\Data");
+        //Path input = Paths.get( "C:\\Users\\Kasper\\Documents\\GitHub\\Program\\Program\\Data\\ACP\\Falcon 7x" );
+        //Path output = Paths.get( "C:\\Users\\Kasper\\Documents\\GitHub\\Program\\Program\\Data");
 
         ser ez = new ser(output);
 
         // Behøver kun serialize 1 gang, med mindre der er sket ændringer i data'erne
-         //ez.serialize(input);
+        //ez.serialize(input);
 
 
         // Ligger info fra vores forskellige .ser filer ind i files
@@ -44,7 +44,7 @@ public class main {
         weightLimitsData[] weightlimitsArray = (weightLimitsData[]) ez.deserializeWeight( "weightlimits.csv" );
         List EBBRESSA138Array = (List) ez.deserializeRoute( "EBBR-ESSA-138.txt" );
 
-        File route1 = new File( "C:\\Users\\Kasper\\Documents\\GitHub\\Program\\Program\\Data\\Route\\EBBR-ESSA-138.txt" );
+        File route1 = new File( "C:\\Users\\MGund\\Documents\\GitHub\\Program\\Data\\Route\\EBBR-ESSA-138.txt" );
 
 
 
@@ -57,13 +57,10 @@ public class main {
 
         List<vertex> graphList = new ArrayList<>();
 
-        graphList.add(new vertex(1, 1));
-        graphList.add(new vertex(7, 2));
-        graphList.add(new vertex(5, 3));
-        graphList.add(new vertex(2, 3));
-        graphList.add(new vertex(4, 1));
+        graphList.add(new vertex(0, 0));
+        graphList.add(new vertex(0, 1));
 
-        dijkstra.Dijkkstra_algorithm(graphList, graphList.get(0));
+        dijkstra.analyzeVertex(graphList.get(0), graphList.get(1), climbArray, descentArray, 0, 2);
 
 
         /*

@@ -1,17 +1,15 @@
 package Dijkstra;
-import Distance.coordinate;
+import PQHeap.FLandWP;
 
 
 public class vertex {
 
-    private coordinate coordinate;
+    private FLandWP FLandWP;
     private Integer d;
-    private Integer FL;
     private vertex predecessor = null;
 
-    public vertex(Integer d, Integer FL) {
-        this.d = d;
-        this.FL = FL;
+    public vertex(Integer FL, Integer WP) {
+        this.FLandWP = new FLandWP(FL,WP);
     }
 
     /**
@@ -23,18 +21,16 @@ public class vertex {
      * @return
      */
     public int FLPosition(Integer FL){
-        if(this.FL > FL){
+        if(this.FLandWP.getFL() > FL){
             return 1;
-        }else if(this.FL == FL){
+        }else if(this.FLandWP.getFL() == FL){
             return 0;
         }else{
             return -1;
         }
     }
 
-    public coordinate getCoordinate() { return coordinate; }
 
-    public void setCoordinate(coordinate c){ this.coordinate = c; }
 
     public Integer getD() {
         return d;
@@ -44,19 +40,15 @@ public class vertex {
         this.d = d;
     }
 
-    public Integer getFL() {
-        return FL;
-    }
-
-    public void setFL(Integer FL) {
-        this.FL = FL;
-    }
-
     public vertex getPredecessor() {
         return predecessor;
     }
 
     public void setPredecessor(vertex predecessor) {
         this.predecessor = predecessor;
+    }
+
+    public PQHeap.FLandWP getFLandWP() {
+        return FLandWP;
     }
 }

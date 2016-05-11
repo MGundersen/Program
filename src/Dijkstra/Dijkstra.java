@@ -25,31 +25,6 @@ public class Dijkstra {
         heap = new PQHeap(heapSize);
     }
 
-    public void giveCoordinates (climbData[][] climbDatas, descentData[][] descentDatas) {
-
-        coordinate coordinateFROM = coordinates.get(0);
-        coordinate coordinateTO = coordinates.get(3);
-        System.out.println( "From " + coordinateFROM.getLongitude() + ":" + coordinateFROM.getLatitude() );
-        System.out.println( "To " + coordinateTO.getLongitude() + ":" + coordinateTO.getLatitude() );
-
-
-        initializeSingleSource(climbDatas,descentDatas,coordinateFROM,coordinateTO,0,2);
-    }
-
-
-    public void initializeSingleSource(climbData[][] climbDatas, descentData[][] descentDatas, coordinate coordinateFROM, coordinate coordinateTO, Integer FL, Integer weight){
-        int clistSize = coordinates.size();
-
-        Integer maxFL = p.largestClimbAdjacent(climbDatas,coordinateFROM,coordinateTO,FL,0,weight);
-
-        Integer minFL = p.largestDescentAdjacent(descentDatas, coordinateFROM,coordinateTO,FL,0,weight);
-
-        Integer FLRange = maxFL - minFL;
-
-        System.out.println( "From -" + minFL + " to " + maxFL );
-
-    }
-
     private void initialize_single_source (List<vertex> graph, vertex s) {
         for (vertex v : graph) {
             //Setting D(our estimated shortest path from s to v) to ~infinite
@@ -71,10 +46,13 @@ public class Dijkstra {
     }
 
 
-
     public void analyzeVertex(vertex s1, vertex s2, climbData[][] climbData, descentData[][] descentData, int ISA, int weight){
-        int max = p.largestClimbAdjacent(climbData, s1.getCoordinate(), s2.getCoordinate(), s1.getFL(), ISA, weight);
-        int min = p.largestDescentAdjacent(descentData, s1.getCoordinate(), s2.getCoordinate(), s1.getFL(), ISA, weight);
+        FLandWP s1FLandWP = s1.getFLandWP();
+        FLandWP s2FLandWP = s2.getFLandWP();
+        int max = p.largestClimbAdjacent(climbData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s2FLandWP.getWP()), s1FLandWP.getFL(), ISA, weight);
+        int min = p.largestDescentAdjacent(descentData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s2FLandWP.getWP()), s1FLandWP.getFL(), ISA, weight);
+
+        System.out.println( "FL max: " + max + " - FL min: " + min );
     }
 
     public void Dijkkstra_algorithm(List<vertex> graph, vertex s) {
