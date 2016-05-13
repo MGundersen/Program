@@ -3,8 +3,10 @@ package Distance;
 import Data.climbData;
 import Data.cruiseData;
 import Data.descentData;
+import Dijkstra.vertex;
 import Distance.climb;
 import Distance.coordinate;
+import PQHeap.FLandWP;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -489,6 +491,44 @@ public class readPaths {
 
         return climbTime + cruiseTime;
 
+    }
+
+    /**
+     * calculates the price for a climb. can also be used for a cruise
+     * @param s1
+     * @param s2
+     * @param ISA
+     * @param weight
+     * @return
+     */
+    public double priceClimb(vertex s1, vertex s2, int ISA, int weight, climbData[][] climbData, cruiseData[][] cruiseData, List<coordinate> coordinates){
+        double result;
+
+        FLandWP s1FLandWP = s1.getFLandWP();
+        FLandWP s2FLandWP = s2.getFLandWP();
+
+        double fuel = fuelAdjacentClimb(climbData, cruiseData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s2FLandWP.getWP()), s1FLandWP.getFL(), s2FLandWP.getFL(), ISA, weight);
+
+        double time = timeAdjacentClimb(climbData, cruiseData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s2FLandWP.getWP()), s1FLandWP.getFL(), s2FLandWP.getFL(), ISA, weight);
+
+        result = (time/60)*1000 + (fuel/6.2)*3;
+
+        return result;
+    }
+
+    public double priceDescent(vertex s1, vertex s2, int ISA, int weight, descentData[][] descentData, cruiseData[][] cruiseData, List<coordinate> coordinates){
+        double result;
+
+        FLandWP s1FLandWP = s1.getFLandWP();
+        FLandWP s2FLandWP = s2.getFLandWP();
+
+        double fuel = fuelAdjacentDescent(descentData, cruiseData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s2FLandWP.getWP()), s1FLandWP.getFL(), s2FLandWP.getFL(), ISA, weight);
+
+        double time = timeAdjacentDescent(descentData, cruiseData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s2FLandWP.getWP()), s1FLandWP.getFL(), s2FLandWP.getFL(), ISA, weight);
+
+        result = (time/60)*1000 + (fuel/6.2)*3;
+
+        return result;
     }
 
     /**

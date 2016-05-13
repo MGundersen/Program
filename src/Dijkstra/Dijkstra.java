@@ -73,9 +73,9 @@ public class Dijkstra {
         while ( counter <= nrOfVertices + min) {
             vertex q = new vertex(counter,s1FLandWP.getWP()+1);
             if ( startFL < q.getFLandWP().getFL() ) {
-                q.setCost( priceClimb(s1, q, 0, 5 ) );
+                q.setCost( p.priceClimb(s1, q, 0, 5, climbData, cruiseData, coordinates ) );
             } else {
-                q.setCost( priceDescent(s1, q, 0, 5) );
+                q.setCost( p.priceDescent(s1, q, 0, 5, descentData, cruiseData, coordinates ) );
             }
             listOfPossibleVertices.add(q);
             counter++;
@@ -93,7 +93,7 @@ public class Dijkstra {
         //ArrayList<vertex> setOfVertices = new ArrayList<>();
 
         //Inserting all our vertices from graph into our minHeap
-        PQHeap q = new PQHeap(100);
+        PQHeap q = new PQHeap(50*coordinates.size());
         q.insert(lastWP);
 
 
@@ -106,44 +106,6 @@ public class Dijkstra {
             System.out.println( "Current lowest cost was: " + u.getCost() + " at FL: " + u.getFLandWP().getFL() + " and WP: " + u.getFLandWP().getWP());
         }
 
-    }
-
-    /**
-     * calculates the price for a climb. can also be used for a cruise
-     * @param s1
-     * @param s2
-     * @param ISA
-     * @param weight
-     * @return
-     */
-    public double priceClimb(vertex s1, vertex s2,int ISA, int weight){
-        double result;
-
-        FLandWP s1FLandWP = s1.getFLandWP();
-        FLandWP s2FLandWP = s2.getFLandWP();
-
-        double fuel = p.fuelAdjacentClimb(climbData, cruiseData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s2FLandWP.getWP()), s1FLandWP.getFL(), s2FLandWP.getFL(), ISA, weight);
-
-        double time = p.timeAdjacentClimb(climbData, cruiseData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s2FLandWP.getWP()), s1FLandWP.getFL(), s2FLandWP.getFL(), ISA, weight);
-
-        result = (time/60)*1000 + (fuel/6.2)*3;
-
-        return result;
-    }
-
-    public double priceDescent(vertex s1, vertex s2, int ISA, int weight){
-        double result;
-
-        FLandWP s1FLandWP = s1.getFLandWP();
-        FLandWP s2FLandWP = s2.getFLandWP();
-
-        double fuel = p.fuelAdjacentDescent(descentData, cruiseData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s2FLandWP.getWP()), s1FLandWP.getFL(), s2FLandWP.getFL(), ISA, weight);
-
-        double time = p.timeAdjacentDescent(descentData, cruiseData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s2FLandWP.getWP()), s1FLandWP.getFL(), s2FLandWP.getFL(), ISA, weight);
-
-        result = (time/60)*1000 + (fuel/6.2)*3;
-
-        return result;
     }
 
 }
