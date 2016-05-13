@@ -23,10 +23,10 @@ public class Dijkstra {
 
     public Dijkstra(File path, int heapSize, climbData[][] climbData,  descentData[][] descentData, cruiseData[][] cruiseData){
         this.coordinates = p.waypoints(path);
-        this.heap = new PQHeap(heapSize);
         this.climbData = climbData;
         this.descentData = descentData;
         this.cruiseData = cruiseData;
+        this.heap = new PQHeap(50*coordinates.size());
     }
 
     private void relax(vertex u, vertex v, Integer w){
@@ -72,39 +72,59 @@ public class Dijkstra {
         Integer counter = min;
         while ( counter <= nrOfVertices + min) {
             vertex q = new vertex(counter,s1FLandWP.getWP()+1);
-            if ( startFL < q.getFLandWP().getFL() ) {
-                q.setCost( p.priceClimb(s1, q, 0, 5, climbData, cruiseData, coordinates ) );
+            if ( heap.search(q.getFLandWP()) == null ) {
+                if ( startFL < q.getFLandWP().getFL() ) {
+                    Double cCost = p.priceClimb(s1, q, 0, 5, climbData, cruiseData, coordinates );
+                    if (cCost >= 0) {
+                        q.setCost( cCost );
+                        listOfPossibleVertices.add(q);
+                    }
+                } else {
+                    Double cCost = p.priceDescent(s1, q, 0, 5, descentData, cruiseData, coordinates );
+                    if (cCost >= 0) {
+                        q.setCost( cCost );
+                        listOfPossibleVertices.add(q);
+                    }
+                }
             } else {
-                q.setCost( p.priceDescent(s1, q, 0, 5, descentData, cruiseData, coordinates ) );
+                //Get Vertex from list. If new vertex has lower cost, remove the vertex
             }
-            listOfPossibleVertices.add(q);
+
             counter++;
         }
 
-        System.out.println( "Returning our list of new vertices" );
-
+        System.out.println( "Returning a new list of new vertices at WP: " + s1FLandWP.getWP()+1 );
         return listOfPossibleVertices;
     }
 
     public void Dijkstra_algorithm() {
+        /* Our vertex in in the first WP(Start) */
         vertex s = initialize_single_source();
+        /* Our vertex in in the last WP(End) */
         vertex lastWP = new vertex(0, coordinates.size()-1);
-        //Empty set of vertices
-        //ArrayList<vertex> setOfVertices = new ArrayList<>();
-
-        //Inserting all our vertices from graph into our minHeap
-        PQHeap q = new PQHeap(50*coordinates.size());
-        q.insert(lastWP);
 
 
+        /* Inserting all our vertices from graph into our minHeap */
+
+        heap.insert(lastWP);
+
+        /* Inseting our first vertices into our minHeap */
         for (vertex v : analyzeVertex(s,0,5) ) {
-            q.insert(v);
+            heap.insert(v);
         }
 
-        while ( !q.empty() ) {
-            vertex u = q.extractMin();
-            System.out.println( "Current lowest cost was: " + u.getCost() + " at FL: " + u.getFLandWP().getFL() + " and WP: " + u.getFLandWP().getWP());
+        if (heap.search(new FLandWP(33,1)) == null) {
+            System.out.println( "Vertex is not in our minHeap" );
+        } else {
+            System.out.println( "Vertex is in our minHeap" );
         }
+
+        while ( !heap.empty() ) {
+            vertex u = heap.extractMin();
+            System.out.println( "Current lowest cost was: " + u.getCost() + " at FL: " + u.getFLandWP().getFL() + " and WP: " + u.getFLandWP().getWP());
+
+        }
+
 
     }
 

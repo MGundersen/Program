@@ -66,13 +66,13 @@ public class PQHeap implements PQ {
     }
 
     @Override
-    public boolean search(FLandWP e) {
+    public vertex search(FLandWP e) {
         for ( Map.Entry<FLandWP, vertex> s : hm.entrySet() ) {
             if (e.getWP() == s.getKey().getWP() && e.getFL() == s.getKey().getFL()) {
-                return true;
+                return s.getValue();
             }
         }
-        return false;
+        return null;
     }
 
     /**
