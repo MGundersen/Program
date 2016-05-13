@@ -42,20 +42,13 @@ public class Dijkstra {
         return new vertex(0,0);
     }
 
-    public List<vertex> analyzeVertex(vertex s1, int ISA, int weight){
+    public void analyzeVertex(vertex s1, int ISA, int weight){
         FLandWP s1FLandWP = s1.getFLandWP();
-        System.out.println( "Input vertex - FL: " + s1FLandWP.getFL() + " - WP: " + s1FLandWP.getWP() );
+        //System.out.println( "Current FL: " + s1FLandWP.getFL() + " and WP: " + s1FLandWP.getWP() );
         int max = p.largestClimbAdjacent(climbData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s1FLandWP.getWP()+1), s1FLandWP.getFL(), ISA, weight);
         int min = p.largestDescentAdjacent(descentData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s1FLandWP.getWP()+1), s1FLandWP.getFL(), ISA, weight);
 
         int startFL = s1FLandWP.getFL();
-        List<vertex> listOfPossibleVertices = new ArrayList<>();
-
-        if ( s1FLandWP.getWP() == coordinates.size()-2 ) {
-            System.out.println( "Returning our last waypoint - destination" );
-            listOfPossibleVertices.add(new vertex(0, s1FLandWP.getWP()+1));
-            return listOfPossibleVertices;
-        }
 
         if (max > 490) {
             max = 490;
@@ -66,69 +59,96 @@ public class Dijkstra {
 
         max = max / 10;
         min = min / 10;
-        System.out.println( "FL max: " + max + " - FL min: " + min );
         Integer nrOfVertices = (max - min);
 
-        Integer counter = min;
-        while ( counter <= nrOfVertices + min) {
-            vertex q = new vertex(counter,s1FLandWP.getWP()+1);
+
+        if ( s1.getFLandWP().getWP() == coordinates.size()-2 ) {
+            vertex q = new vertex(0,s1FLandWP.getWP()+1);
+            q.setPredecessor(s1);
             vertex y = heap.search(q.getFLandWP());
+            Double cCost = p.priceDescent(s1, q, 0, 5, descentData, cruiseData, coordinates );
+            q.setCost( cCost );
             if ( y == null ) {
+                heap.insert(q);
+            } else {
+                if (y.getCost() > q.getCost()) {
+                    //If new vertex has lower cost, remove the old vertex and insert the new vertex with the lower cost
+                    q.setCost( q.getCost() + y.getCost() );
+                    heap.remove(y.getFLandWP());
+                    heap.insert(q);
+                }
+            }
+        } else {
+            Integer counter = min;
+            while ( counter <= nrOfVertices + min) {
+                vertex q = new vertex(counter,s1FLandWP.getWP()+1);
+                q.setPredecessor(s1);
+                vertex y = heap.search(q.getFLandWP());
                 if ( startFL < q.getFLandWP().getFL() ) {
                     Double cCost = p.priceClimb(s1, q, 0, 5, climbData, cruiseData, coordinates );
                     if (cCost >= 0) {
                         q.setCost( cCost );
-                        listOfPossibleVertices.add(q);
                     }
                 } else {
                     Double cCost = p.priceDescent(s1, q, 0, 5, descentData, cruiseData, coordinates );
                     if (cCost >= 0) {
                         q.setCost( cCost );
-                        listOfPossibleVertices.add(q);
                     }
                 }
-            } else {
-                //Get Vertex from list. If new vertex has lower cost, remove the vertex
-                if (y.getCost() > q.getCost()) {
-
+                if ( y == null ) {
+                    heap.insert(q);
+                } else {
+                    //System.out.println( "Old cost: " + y.getCost() + " - new cost: " + q.getCost() );
+                    if (y.getCost() > q.getCost()) {
+                        //If new vertex has lower cost, remove the old vertex and insert the new vertex with the lower cost
+                        q.setCost( q.getCost() + y.getCost() );
+                        heap.remove(y.getFLandWP());
+                        heap.insert(q);
+                    }
                 }
+                counter++;
             }
-
-            counter++;
         }
-
-        System.out.println( "Returning a new list of new vertices at WP: " + s1FLandWP.getWP()+1 );
-        return listOfPossibleVertices;
     }
 
     public void Dijkstra_algorithm() {
         /* Our vertex in in the first WP(Start) */
         vertex s = initialize_single_source();
+        System.out.println( "Start FL: " + s.getFLandWP().getFL() + " and WP: " + s.getFLandWP().getWP() );
+
         /* Our vertex in in the last WP(End) */
         vertex lastWP = new vertex(0, coordinates.size()-1);
+        System.out.println( "End FL: " + lastWP.getFLandWP().getFL() + " and WP: " + lastWP.getFLandWP().getWP() );
 
-
-        /* Inserting all our vertices from graph into our minHeap */
-
+        /* Manually inserting our last WP into our minHeap, so we have a reference to the last WP */
         heap.insert(lastWP);
+        analyzeVertex(s,0,5);
 
-        /* Inseting our first vertices into our minHeap */
-        for (vertex v : analyzeVertex(s,0,5) ) {
-            heap.insert(v);
-        }
-
-        if (heap.search(new FLandWP(33,1)) == null) {
-            System.out.println( "Vertex is not in our minHeap" );
-        } else {
-            System.out.println( "Vertex is in our minHeap" );
-        }
-
+        Double currentFinalCost = Double.POSITIVE_INFINITY;
+        vertex finalVertex = new vertex(0,0);
         while ( !heap.empty() ) {
             vertex u = heap.extractMin();
-            System.out.println( "Current lowest cost was: " + u.getCost() + " at FL: " + u.getFLandWP().getFL() + " and WP: " + u.getFLandWP().getWP());
 
+            if ( u.getFLandWP().getFL() == lastWP.getFLandWP().getFL() && u.getFLandWP().getWP() == lastWP.getFLandWP().getWP() ) {
+                if ( u.getCost() < currentFinalCost ) {
+                    System.out.println( u.getCost() + " was smaleller than " + currentFinalCost );
+                    currentFinalCost = u.getCost();
+                    finalVertex = u;
+                    heap.remove( u.getFLandWP() );
+                    heap.insert( u );
+                }
+            } else analyzeVertex(u,0,5);
         }
+        System.out.println( "This is the last vertex - FL:" + finalVertex.getFLandWP().getFL() + " and WP: " + finalVertex.getFLandWP().getWP() + " and the final cost was: " + finalVertex.getCost() );
+        backtracking(finalVertex);
+    }
 
+    private void backtracking (vertex v) {
+        vertex pi = v;
+        while ( pi != null ) {
+            System.out.println( "FL: " + pi.getFLandWP().getFL() + " and WP: " + pi.getFLandWP().getWP() + " and current cost: " + pi.getCost() );
+            pi = pi.getPredecessor();
+        }
 
     }
 

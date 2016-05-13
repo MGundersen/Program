@@ -121,7 +121,18 @@ public class PQHeap implements PQ {
     }
 
     public boolean empty() {
-        if (Queue.isEmpty()) return true;
+        if (Queue.size() == 0) return true;
         else return false;
     }
+
+    public void remove(FLandWP fw){
+        for (int i = 0; i < Queue.size()-1; i++){
+            if (Queue.get(i).getFLandWP().getFL() == fw.getFL() && Queue.get(i).getFLandWP().getWP() == fw.getWP()){
+                Collections.swap(Queue, i, Queue.size()-1);
+                Queue.remove(Queue.size()-1);
+                Min_heapify(Queue, 0);
+            }
+        }
+    }
+
 }
