@@ -46,42 +46,9 @@ public class main {
 
         File route1 = new File( "C:\\Users\\MGund\\Documents\\GitHub\\Program\\Data\\Route\\EBBR-ESSA-138.txt" );
 
+        Dijkstra dijkstra = new Dijkstra(route1,100, climbArray, descentArray, cruiseArray);
 
-
-        // List<climbData> list = (List<climbData>) climbSer;
-         System.out.println( climbArray[1][1].Fuel );
-
-        Dijkstra dijkstra = new Dijkstra(route1,100);
-
-//        dijkstra.giveCoordinates(climbArray,descentArray);
-
-        List<vertex> graphList = new ArrayList<>();
-
-        graphList.add(new vertex(0, 0));
-        graphList.add(new vertex(0, 1));
-
-        dijkstra.analyzeVertex(graphList.get(0), graphList.get(1), climbArray, descentArray, 0, 2);
-
-
-        /*
-        dataArrays d = new dataArrays();
-
-        cruiseData[][] cruiseList = d.cruiseFill(cruiseSer);
-
-        System.out.println( "Cruise[0][0]: " + cruiseList[0][0].FuelFlow );
-
-        climbData[][] climbList = d.climbFill(climbSer);
-
-        System.out.println( "Climb[1][0]: " + climbList[1][0].Fuel );
-
-        descentData[][] descentList = d.descentFill(descentSer);
-
-        System.out.println( "Descent[1][0]: " + descentList[1][0].Fuel );
-
-        weightLimitsData[] weightLimitList = d.weightLimitsFill(weightlimitsSer);
-
-        System.out.println( "Weightlimit[0]: " + weightLimitList[0].weight );
-        */
+        dijkstra.Dijkstra_algorithm();
 
 
     }

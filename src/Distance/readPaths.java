@@ -49,6 +49,7 @@ public class readPaths {
                             new coordinate(
                                     Double.parseDouble( lineArray[1].replace(",",".") ),     //lineArray[1] equals latitude, comma must be replaced by dot
                                     Double.parseDouble( lineArray[2].replace(",",".") )      //lineArray[2] equals longitude, comma must be replaced by dot
+
                             ) //new Distance.coordinate
                     ); //coordinateList.add
                 }// if-statement
@@ -321,7 +322,7 @@ public class readPaths {
      * @param weight weight of the aircraft
      * @return
      */
-    private double fuelAdjacentClimb(climbData[][] climbData, cruiseData[][] cruiseData, coordinate c1, coordinate c2, int FL_from, int FL_to, int ISA, int weight){
+    public double fuelAdjacentClimb(climbData[][] climbData, cruiseData[][] cruiseData, coordinate c1, coordinate c2, int FL_from, int FL_to, int ISA, int weight){
         double climbFuel = climb.fuelClimb(climbData, FL_from, FL_to, ISA, weight);
         double climbDistance = climb.distanceClimb(climbData, FL_from, FL_to, ISA, weight);
         double cruiseFuel = cruise.fuelCruise(cruiseData, FL_to, ISA, weight);
@@ -384,7 +385,7 @@ public class readPaths {
      * @param weight weight
      * @return
      */
-    private double timeAdjacentClimb(climbData[][] climbData, cruiseData[][] cruiseData, coordinate c1, coordinate c2, int FL_from, int FL_to, int ISA, int weight){
+    public double timeAdjacentClimb(climbData[][] climbData, cruiseData[][] cruiseData, coordinate c1, coordinate c2, int FL_from, int FL_to, int ISA, int weight){
 
         double climbTime = climb.timeClimb(climbData, FL_from, FL_to, ISA, weight);
         double climbDistance = climb.distanceClimb(climbData, FL_from, FL_to, ISA, weight);
@@ -436,6 +437,59 @@ public class readPaths {
     }
 
 
+    /**
+     * calculates and returns the fuel needed for descending between two adjacent waypoints
+     * @param descentData
+     * @param cruiseData
+     * @param c1
+     * @param c2
+     * @param FL_from
+     * @param FL_to
+     * @param ISA
+     * @param weight
+     * @return
+     */
+    public double fuelAdjacentDescent(descentData[][] descentData, cruiseData[][] cruiseData, coordinate c1, coordinate c2, int FL_from, int FL_to, int ISA, int weight){
+        double descentFuel = descent.fuelDescent(descentData, FL_from, FL_to, ISA, weight);
+        double descentDistance = descent.fuelDescent(descentData, FL_from, FL_to, ISA, weight);
+        double cruiseFuel = cruise.fuelCruise(cruiseData, FL_to, ISA, weight);
+        double cruiseSpeed = cruise.idealCruiseSpeed(cruiseData, FL_to, ISA, weight);
+
+        double distance = deltaAdjacentWaypoint(c1, c2);
+        double deltaDistance = distance - descentDistance;
+
+        double cruiseTime = deltaDistance/cruiseSpeed;
+
+        return cruiseTime*cruiseFuel+descentFuel;
+    }
+
+
+    /**
+     * calculates and returns the time needed for descending between two adjacent waypoints
+     * @param descentData
+     * @param cruiseData
+     * @param c1
+     * @param c2
+     * @param FL_from
+     * @param FL_to
+     * @param ISA
+     * @param weight
+     * @return
+     */
+    public double timeAdjacentDescent(descentData[][] descentData, cruiseData[][] cruiseData, coordinate c1, coordinate c2, int FL_from, int FL_to, int ISA, int weight){
+
+        double climbTime = descent.timeDescent(descentData, FL_from, FL_to, ISA, weight);
+        double climbDistance = descent.distanceDescent(descentData, FL_from, FL_to, ISA, weight);
+        double cruiseSpeed = cruise.idealCruiseSpeed(cruiseData, FL_to, ISA, weight);
+
+        double distance = deltaAdjacentWaypoint(c1, c2);
+        double deltaDistance = distance - climbDistance;
+
+        double cruiseTime = deltaDistance/cruiseSpeed;
+
+        return climbTime + cruiseTime;
+
+    }
 
     /**
      * TO DO ---------------------------------------------------------------------------------

@@ -4,6 +4,7 @@ import Dijkstra.vertex;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by:
@@ -58,7 +59,7 @@ public class PQHeap implements PQ {
         } catch (ArrayIndexOutOfBoundsException k) {
             System.out.println("Array is out of bounds");
         }
-        while (i > 0 && Queue.get(Parent(i)).getD() >= Queue.get(i).getD()) {
+        while (i > 0 && Queue.get(Parent(i)).getCost() >= Queue.get(i).getCost()) {
             Collections.swap(Queue, i, Parent(i));
             i = Parent(i);
         }
@@ -66,7 +67,12 @@ public class PQHeap implements PQ {
 
     @Override
     public boolean search(FLandWP e) {
-        return hm.containsKey(e);
+        for ( Map.Entry<FLandWP, vertex> s : hm.entrySet() ) {
+            if (e.getWP() == s.getKey().getWP() && e.getFL() == s.getKey().getFL()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -76,13 +82,13 @@ public class PQHeap implements PQ {
         int l = Left(i);
         int r = Right(i);
         int smallest;
-        if (l < A.size() && A.get(l).getD() <= A.get(i).getD()) {
+        if (l < A.size() && A.get(l).getCost() <= A.get(i).getCost()) {
             smallest = l;
         }
         else {
             smallest = i;
         }
-        if (r < A.size() && A.get(r).getD() <= A.get(smallest).getD()) {
+        if (r < A.size() && A.get(r).getCost() <= A.get(smallest).getCost()) {
             smallest = r;
         }
         if (smallest != i) {

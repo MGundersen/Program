@@ -5,11 +5,12 @@ import PQHeap.FLandWP;
 public class vertex {
 
     private FLandWP FLandWP;
-    private Integer d;
+    private Double cost;
     private vertex predecessor = null;
 
     public vertex(Integer FL, Integer WP) {
         this.FLandWP = new FLandWP(FL,WP);
+        this.cost = Double.POSITIVE_INFINITY;
     }
 
     /**
@@ -32,12 +33,12 @@ public class vertex {
 
 
 
-    public Integer getD() {
-        return d;
+    public Double getCost() {
+        return cost;
     }
 
-    public void setD(Integer d) {
-        this.d = d;
+    public void setCost(Double cost) {
+        this.cost = cost;
     }
 
     public vertex getPredecessor() {
