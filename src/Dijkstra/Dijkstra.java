@@ -73,7 +73,7 @@ public class Dijkstra {
             } else {
                 if (y.getCost() > q.getCost()) {
                     //If new vertex has lower cost, remove the old vertex and insert the new vertex with the lower cost
-                    q.setCost( q.getCost() + y.getCost() );
+                    //q.setCost( q.getCost() + y.getCost() );
                     heap.remove(y.getFLandWP());
                     heap.insert(q);
                 }
@@ -101,7 +101,7 @@ public class Dijkstra {
                     //System.out.println( "Old cost: " + y.getCost() + " - new cost: " + q.getCost() );
                     if (y.getCost() > q.getCost()) {
                         //If new vertex has lower cost, remove the old vertex and insert the new vertex with the lower cost
-                        q.setCost( q.getCost() + y.getCost() );
+                        //q.setCost( q.getCost() + y.getCost() );
                         heap.remove(y.getFLandWP());
                         heap.insert(q);
                     }
