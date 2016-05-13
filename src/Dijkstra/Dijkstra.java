@@ -72,7 +72,8 @@ public class Dijkstra {
         Integer counter = min;
         while ( counter <= nrOfVertices + min) {
             vertex q = new vertex(counter,s1FLandWP.getWP()+1);
-            if ( heap.search(q.getFLandWP()) == null ) {
+            vertex y = heap.search(q.getFLandWP());
+            if ( y == null ) {
                 if ( startFL < q.getFLandWP().getFL() ) {
                     Double cCost = p.priceClimb(s1, q, 0, 5, climbData, cruiseData, coordinates );
                     if (cCost >= 0) {
@@ -88,6 +89,9 @@ public class Dijkstra {
                 }
             } else {
                 //Get Vertex from list. If new vertex has lower cost, remove the vertex
+                if (y.getCost() > q.getCost()) {
+
+                }
             }
 
             counter++;
