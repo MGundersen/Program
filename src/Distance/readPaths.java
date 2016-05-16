@@ -202,7 +202,9 @@ public class readPaths {
 
         int FL_to = FL_from;
 
-        while( FL_to <= 49 && climb.distanceClimb(climbData, FL_from, FL_to, ISA, weight) <= maxDistance) {
+        double c = climb.distanceClimb(climbData, FL_from, FL_to, ISA, weight);
+
+        while( FL_to <= 49 && c <= maxDistance && climbData[FL_to][weight].Distance > -1) {
             FL_to++;
         }
         if(FL_to == FL_from){
@@ -219,16 +221,18 @@ public class readPaths {
 
         int FL_to = FL_from;
 
-        while(FL_to <= 49 && descent.distanceDescent(descentData, FL_from, FL_to, ISA, weight) <= maxDistance) {
-                FL_to++;
+        double d = descent.distanceDescent(descentData, FL_from, FL_to, ISA, weight);
+
+        while(FL_to >= 0 && d <= maxDistance && descentData[FL_to][weight].Distance > -1) {
+                FL_to--;
         }
         if(FL_to == FL_from){
             return FL_to;
-        } else if (FL_to == 50) {
-            return (FL_to - 1) * 10;
+        } else if (FL_to == -1) {
+            return 0;
         }
 
-        return (FL_to - 1) * 10;
+        return (FL_to + 1) * 10;
     }
 
     /**

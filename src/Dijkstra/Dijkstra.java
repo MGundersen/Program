@@ -29,88 +29,106 @@ public class Dijkstra {
         this.heap = new PQHeap(50*coordinates.size());
     }
 
-    private void relax(vertex u, vertex v, Integer w){
-
-        if (v.getCost() > (u.getCost()) + w){
-            v.setCost(u.getCost() + w);
-            v.setPredecessor(u);
-        }
-
-    }
 
     private vertex initialize_single_source() {
-        return new vertex(0,0);
+        vertex result = new vertex(0,0);
+        result.setCost(0.);
+        return result;
     }
 
+    /**
+     * used for analyzing a vertex
+     * @param s1
+     * @param ISA
+     * @param weight
+     */
     public void analyzeVertex(vertex s1, int ISA, int weight){
         FLandWP s1FLandWP = s1.getFLandWP();
         //System.out.println( "Current FL: " + s1FLandWP.getFL() + " and WP: " + s1FLandWP.getWP() );
         int max = p.largestClimbAdjacent(climbData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s1FLandWP.getWP()+1), s1FLandWP.getFL(), ISA, weight);
         int min = p.largestDescentAdjacent(descentData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s1FLandWP.getWP()+1), s1FLandWP.getFL(), ISA, weight);
 
-        int startFL = s1FLandWP.getFL();
-
         if (max > 490) {
             max = 490;
         }
-        if (min > 10) {
+        if (min < 10) {
             min = 10;
         }
 
         max = max / 10;
         min = min / 10;
+
+        //System.out.println("max:    "+max+"       min:   "+min);
         Integer nrOfVertices = (max - min);
 
-
         if ( s1.getFLandWP().getWP() == coordinates.size()-2 ) {
-            vertex q = new vertex(0,s1FLandWP.getWP()+1);
-            q.setPredecessor(s1);
-            vertex y = heap.search(q.getFLandWP());
-            Double cCost = p.priceDescent(s1, q, 0, 5, descentData, cruiseData, coordinates );
-            q.setCost( cCost );
-            if ( y == null ) {
-                heap.insert(q);
-            } else {
-                if (y.getCost() > q.getCost()) {
-                    //If new vertex has lower cost, remove the old vertex and insert the new vertex with the lower cost
-                    //q.setCost( q.getCost() + y.getCost() );
-                    heap.remove(y.getFLandWP());
-                    heap.insert(q);
-                }
-            }
+            lastInsert( s1, weight );
         } else {
             Integer counter = min;
-            while ( counter <= nrOfVertices + min) {
-                vertex q = new vertex(counter,s1FLandWP.getWP()+1);
-                q.setPredecessor(s1);
-                vertex y = heap.search(q.getFLandWP());
-                if ( startFL < q.getFLandWP().getFL() ) {
-                    Double cCost = p.priceClimb(s1, q, 0, 5, climbData, cruiseData, coordinates );
-                    if (cCost >= 0) {
-                        q.setCost( cCost );
-                    }
-                } else {
-                    Double cCost = p.priceDescent(s1, q, 0, 5, descentData, cruiseData, coordinates );
-                    if (cCost >= 0) {
-                        q.setCost( cCost );
-                    }
-                }
-                if ( y == null ) {
-                    heap.insert(q);
-                } else {
-                    //System.out.println( "Old cost: " + y.getCost() + " - new cost: " + q.getCost() );
-                    if (y.getCost() > q.getCost()) {
-                        //If new vertex has lower cost, remove the old vertex and insert the new vertex with the lower cost
-                        //q.setCost( q.getCost() + y.getCost() );
-                        heap.remove(y.getFLandWP());
-                        heap.insert(q);
-                    }
-                }
+            while( counter <= nrOfVertices ){
+                notLastInsert( s1 , counter, weight );
                 counter++;
             }
         }
     }
 
+    /**
+     * used for deciding whether or not to insert a vertex that is the last into the queue
+     * @param s1
+     * @param weight
+     */
+    public void lastInsert( vertex s1 , int weight ){
+        vertex q = new vertex(0,s1.getFLandWP().getWP()+1);
+        q.setPredecessor(s1);
+        vertex y = heap.search(q.getFLandWP());
+
+        coordinate c1 = coordinates.get( s1.getFLandWP().getWP() );
+        coordinate c2 = coordinates.get( q.getFLandWP().getWP() );
+
+        if( p.largestDescentAdjacent(descentData, c1, c2, s1.getFLandWP().getFL(), weight, 0) == 0 ){ //checks if FL 0 can be reached from s1
+            Double cCost = p.priceDescent( s1, q, 0, 5, descentData, cruiseData, coordinates );
+            q.setCost( cCost + s1.getCost() );
+            if ( y == null ) {
+                heap.insert(q);
+            } else {
+                if (y.getCost() > q.getCost()) {
+                    //If new vertex has lower cost, remove the old vertex and insert the new vertex with the lower cost
+                    heap.remove(y.getFLandWP());
+                    heap.insert(q);
+                }
+            }
+        }
+    }
+
+    /**
+     * used for deciding whether or not to insert a vertex that is not the last into the queue
+     * @param s1
+     * @param min
+     */
+    public void notLastInsert( vertex s1 , int FL , int weight ){
+        vertex q = new vertex(FL, s1.getFLandWP().getWP()+1);
+        if( s1.getFLandWP().getFL() > q.getFLandWP().getFL() ){
+            double cost = p.priceDescent( s1, q, 0 , weight, descentData, cruiseData, coordinates);
+            q.setCost( s1.getCost() + cost );
+        }else{
+            double cost = p.priceClimb( s1, q, 0, weight, climbData, cruiseData, coordinates );
+            q.setCost( s1.getCost() + cost );
+        }
+        q.setPredecessor( s1 );
+        vertex u = heap.search(q.getFLandWP());
+        if(u == null){
+            heap.insert(q);
+        }else{
+            if( q.getCost() < u.getCost() ){
+                heap.remove( u.getFLandWP() );
+                heap.insert( q );
+            }
+        }
+    }
+
+    /**
+     * dijkstra's algorithm
+     */
     public void Dijkstra_algorithm() {
         /* Our vertex in in the first WP(Start) */
         vertex s = initialize_single_source();
@@ -124,24 +142,19 @@ public class Dijkstra {
         heap.insert(lastWP);
         analyzeVertex(s,0,5);
 
-        Double currentFinalCost = Double.POSITIVE_INFINITY;
-        vertex finalVertex = new vertex(0,0);
+        vertex lastVertex = null;
+        vertex u;
         while ( !heap.empty() ) {
-            vertex u = heap.extractMin();
-
-            if ( u.getFLandWP().getFL() == lastWP.getFLandWP().getFL() && u.getFLandWP().getWP() == lastWP.getFLandWP().getWP() ) {
-                if ( u.getCost() < currentFinalCost ) {
-                    System.out.println( u.getCost() + " was smaleller than " + currentFinalCost );
-                    currentFinalCost = u.getCost();
-                    finalVertex = u;
-                    heap.remove( u.getFLandWP() );
-                    heap.insert( u );
-                }
+            u = heap.extractMin();
+            if ( u.getFLandWP().getWP() == lastWP.getFLandWP().getWP() ) {
+                lastVertex = u;
+                heap.removeAllAbove( u.getCost() );
             } else analyzeVertex(u,0,5);
         }
-        System.out.println( "This is the last vertex - FL:" + finalVertex.getFLandWP().getFL() + " and WP: " + finalVertex.getFLandWP().getWP() + " and the final cost was: " + finalVertex.getCost() );
-        backtracking(finalVertex);
+        System.out.println( "This is the last vertex - FL:" + lastVertex.getFLandWP().getFL() + " and WP: " + lastVertex.getFLandWP().getWP() + " and the final cost was: " + lastVertex.getCost() );
+        backtracking(lastVertex);
     }
+
 
     private void backtracking (vertex v) {
         vertex pi = v;
@@ -151,5 +164,8 @@ public class Dijkstra {
         }
 
     }
+    /**
+     * write method to remove all paths in queue that cost more
+     */
 
 }

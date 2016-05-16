@@ -135,4 +135,35 @@ public class PQHeap implements PQ {
         }
     }
 
+    /**
+     * removes an element with a larger cost than the one given
+     * @param index
+     * @param cost
+     */
+    private void remove(int index, double cost){
+        int left;
+        int right;
+        if( ( left = Left(index) ) < Queue.size() ){
+            remove(left, cost);
+        }
+        if( index < Queue.size() ){
+            if( Queue.get(index).getCost() > cost ){
+                Queue.remove(index);
+            }
+        }else{
+            return;
+        }
+        if( ( right = Right(index) ) < Queue.size() ){
+            remove(right, cost);
+        }
+    }
+
+    /**
+     * encasing remove( index, cost )
+     * @param cost
+     */
+    public void removeAllAbove(double cost){
+        remove( 0, cost );
+    }
+
 }
