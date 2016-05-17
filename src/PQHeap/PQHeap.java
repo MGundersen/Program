@@ -135,6 +135,7 @@ public class PQHeap implements PQ {
         }
     }
 
+<<<<<<< HEAD
     /**
      * removes an element with a larger cost than the one given
      * @param index
@@ -166,4 +167,6 @@ public class PQHeap implements PQ {
         remove( 0, cost );
     }
 
+=======
+>>>>>>> origin/master
 }
