@@ -3,18 +3,23 @@ package PQHeap;
 import Dijkstra.vertex;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by:
  * Kasper Skov Johansen (kajoh14@student.sdu.dk)
  * Morten Kristian Jaeger (mojae15@student.sdu.dk)
  */
-public class PQHeap implements PQ{
+public class PQHeap implements PQ {
 
     // Queue used for the heap
     public ArrayList<vertex> Queue;
 
-    //constructor
+    // Hashmap used for searching
+    private HashMap<FLandWP, vertex> hm = new HashMap<>();
+
+    // constructor
     public PQHeap(int MaxElements){
         this.Queue = new ArrayList<>(MaxElements);
     }
@@ -35,8 +40,8 @@ public class PQHeap implements PQ{
             return min;
         }catch(ArrayIndexOutOfBoundsException k){
             System.out.println("No elements in queue");
+            return null;
         }
-        return null;
     }
 
     /**
@@ -46,16 +51,28 @@ public class PQHeap implements PQ{
      */
     @Override
     public void insert(vertex e) {
+        FLandWP FLandWPKey = e.getFLandWP();
+        hm.put(FLandWPKey,e);
         int i = Queue.size();
         try {
             Queue.add(e);
         } catch (ArrayIndexOutOfBoundsException k) {
             System.out.println("Array is out of bounds");
         }
-        while (i > 0 && Queue.get(Parent(i)).getD() >= Queue.get(i).getD()) {
+        while (i > 0 && Queue.get(Parent(i)).getCost() >= Queue.get(i).getCost()) {
             Collections.swap(Queue, i, Parent(i));
             i = Parent(i);
         }
+    }
+
+    @Override
+    public vertex search(FLandWP e) {
+        for ( Map.Entry<FLandWP, vertex> s : hm.entrySet() ) {
+            if (e.getWP() == s.getKey().getWP() && e.getFL() == s.getKey().getFL()) {
+                return s.getValue();
+            }
+        }
+        return null;
     }
 
     /**
@@ -65,13 +82,13 @@ public class PQHeap implements PQ{
         int l = Left(i);
         int r = Right(i);
         int smallest;
-        if (l < A.size() && A.get(l).getD() <= A.get(i).getD()) {
+        if (l < A.size() && A.get(l).getCost() <= A.get(i).getCost()) {
             smallest = l;
         }
         else {
             smallest = i;
         }
-        if (r < A.size() && A.get(r).getD() <= A.get(smallest).getD()) {
+        if (r < A.size() && A.get(r).getCost() <= A.get(smallest).getCost()) {
             smallest = r;
         }
         if (smallest != i) {
@@ -104,7 +121,49 @@ public class PQHeap implements PQ{
     }
 
     public boolean empty() {
-        if (Queue.isEmpty()) return true;
+        if (Queue.size() == 0) return true;
         else return false;
     }
+
+    public void remove(FLandWP fw){
+        for (int i = 0; i < Queue.size()-1; i++){
+            if (Queue.get(i).getFLandWP().getFL() == fw.getFL() && Queue.get(i).getFLandWP().getWP() == fw.getWP()){
+                Collections.swap(Queue, i, Queue.size()-1);
+                Queue.remove(Queue.size()-1);
+                Min_heapify(Queue, 0);
+            }
+        }
+    }
+
+    /**
+     * removes an element with a larger cost than the one given
+     * @param index
+     * @param cost
+     */
+    private void remove(int index, double cost){
+        int left;
+        int right;
+        if( ( left = Left(index) ) < Queue.size() ){
+            remove(left, cost);
+        }
+        if( index < Queue.size() ){
+            if( Queue.get(index).getCost() > cost ){
+                Queue.remove(index);
+            }
+        }else{
+            return;
+        }
+        if( ( right = Right(index) ) < Queue.size() ){
+            remove(right, cost);
+        }
+    }
+
+    /**
+     * encasing remove( index, cost )
+     * @param cost
+     */
+    public void removeAllAbove(double cost){
+        remove( 0, cost );
+    }
+
 }

@@ -38,31 +38,27 @@ public class cruisePerformance {
 
     /**
      * returns the fuel consumption per hour based on flight level, ISA and weight of the aircraft
-     * @param file the file with Data.cruiseData performance data
      * @param FL the flight level
      * @param ISA ISA
      * @param weight weight of the plane
      * @return
      */
     public double fuelCruise(cruiseData[][] array, int FL, int ISA, int weight ){
-        int FL_index = FLToIndex(FL);
-        int weight_index = weightToIndex(weight);
-
-        return array[FL_index][weight_index].FuelFlow;
+        //int FL_index = FLToIndex(FL);
+        //int weight_index = weightToIndex(weight);
+        return array[FL][weight].FuelFlow;
     }
 
     /**
      * returns the ideal speed based on flight level, ISA and weight of the aircraft
-     * @param file the file with Data.cruiseData performance data
      * @param FL the flight level
      * @param ISA ISA
      * @param weight weight of the plane
      * @return
      */
     public double idealCruiseSpeed( cruiseData[][] array, int FL, int ISA, int weight ){
-        int FL_index = FLToIndex(FL);
-        int weight_index = weightToIndex(weight);
-
-        return array[FL_index][weight_index].Speed;
+        //int FL_index = FLToIndex(FL);
+        //int weight_index = weightToIndex(weight);
+        return array[FL][weight].Speed;
     }
 }
