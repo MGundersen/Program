@@ -21,7 +21,7 @@ public class Dijkstra {
     descentData[][] descentData;
     cruiseData[][] cruiseData;
 
-    public Dijkstra(File path, int heapSize, climbData[][] climbData,  descentData[][] descentData, cruiseData[][] cruiseData){
+    public Dijkstra(File path, climbData[][] climbData,  descentData[][] descentData, cruiseData[][] cruiseData){
         this.coordinates = p.waypoints(path);
         this.climbData = climbData;
         this.descentData = descentData;
@@ -32,6 +32,7 @@ public class Dijkstra {
 
     private vertex initialize_single_source() {
         vertex result = new vertex(0,0);
+        result.setWeight(33000);
         result.setCost(0.);
         return result;
     }
@@ -42,11 +43,12 @@ public class Dijkstra {
      * @param ISA
      * @param weight
      */
-    public void analyzeVertex(vertex s1, int ISA, int weight){
+    public void analyzeVertex(vertex s1, int ISA){
         FLandWP s1FLandWP = s1.getFLandWP();
+        int weightIndex = (int) Math.floor((s1.getWeight()-33000)/4000);
         //System.out.println( "Current FL: " + s1FLandWP.getFL() + " and WP: " + s1FLandWP.getWP() );
-        int max = p.largestClimbAdjacent(climbData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s1FLandWP.getWP()+1), s1FLandWP.getFL(), ISA, weight);
-        int min = p.largestDescentAdjacent(descentData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s1FLandWP.getWP()+1), s1FLandWP.getFL(), ISA, weight);
+        int max = p.largestClimbAdjacent(climbData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s1FLandWP.getWP()+1), s1FLandWP.getFL(), ISA, weightIndex);
+        int min = p.largestDescentAdjacent(descentData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s1FLandWP.getWP()+1), s1FLandWP.getFL(), ISA, weightIndex);
 
         if (max > 490) {
             max = 490;
@@ -62,11 +64,11 @@ public class Dijkstra {
         Integer nrOfVertices = (max - min);
 
         if ( s1.getFLandWP().getWP() == coordinates.size()-2 ) {
-            lastInsert( s1, weight );
+            lastInsert( s1 );
         } else {
             Integer counter = min;
             while( counter <= nrOfVertices ){
-                notLastInsert( s1 , counter, weight );
+                notLastInsert( s1 , counter );
                 counter++;
             }
         }
@@ -77,7 +79,7 @@ public class Dijkstra {
      * @param s1
      * @param weight
      */
-    public void lastInsert( vertex s1 , int weight ){
+    public void lastInsert( vertex s1 ){
         vertex q = new vertex(0,s1.getFLandWP().getWP()+1);
         q.setPredecessor(s1);
         vertex y = heap.search(q.getFLandWP());
@@ -85,9 +87,28 @@ public class Dijkstra {
         coordinate c1 = coordinates.get( s1.getFLandWP().getWP() );
         coordinate c2 = coordinates.get( q.getFLandWP().getWP() );
 
-        if( p.largestDescentAdjacent(descentData, c1, c2, s1.getFLandWP().getFL(), weight, 0) == 0 ){ //checks if FL 0 can be reached from s1
-            Double cCost = p.priceDescent( s1, q, 0, 5, descentData, cruiseData, coordinates );
+        int weightIndex = (int) Math.ceil((s1.getWeight()-33000)/4000);
+
+        if(weightIndex < 0){
+            weightIndex = 0;
+        }
+
+        if( p.largestDescentAdjacent(descentData, c1, c2, s1.getFLandWP().getFL(), s1.getWeight(), 0) == 0 ){ //checks if FL 0 can be reached from s1
+            Double cCost = p.priceDescent( s1, q, 0, weightIndex, descentData, cruiseData, coordinates );
             q.setCost( cCost + s1.getCost() );
+
+            int deltaWeightIndex = (int) Math.ceil((s1.getWeight() - 33000)/4000);
+
+            double deltaWeight = p.fuelAdjacentClimb( climbData, cruiseData, c1, c2, s1.getFLandWP().getFL(), q.getFLandWP().getFL(), 0, deltaWeightIndex);
+
+            Integer qWeight = (int)(s1.getWeight() - deltaWeight);
+
+            if(qWeight < 0){        //if the plane can't lose any more weight
+                return;
+            }
+
+            q.setWeight( qWeight );
+
             if ( y == null ) {
                 heap.insert(q);
             } else {
@@ -105,14 +126,51 @@ public class Dijkstra {
      * @param s1
      * @param min
      */
-    public void notLastInsert( vertex s1 , int FL , int weight ){
+    public void notLastInsert( vertex s1 , int FL ){
+
+
+        int weightIndex = (int) Math.ceil((s1.getWeight() - 33000)/4000);
+        if(weightIndex < 0){
+            weightIndex = 0;
+        }
         vertex q = new vertex(FL, s1.getFLandWP().getWP()+1);
         if( s1.getFLandWP().getFL() > q.getFLandWP().getFL() ){
-            double cost = p.priceDescent( s1, q, 0 , weight, descentData, cruiseData, coordinates);
+
+            coordinate c1 = coordinates.get( s1.getFLandWP().getWP() );
+            coordinate c2 = coordinates.get( s1.getFLandWP().getWP() );
+
+            double cost = p.priceDescent( s1, q, 0 , weightIndex, descentData, cruiseData, coordinates);
             q.setCost( s1.getCost() + cost );
+
+            double deltaWeight = p.fuelAdjacentDescent( descentData, cruiseData, c1, c2, s1.getFLandWP().getFL(), q.getFLandWP().getFL(), 0, weightIndex);
+
+            Integer qWeight = (int)(s1.getWeight() - deltaWeight);
+
+            if(qWeight < 0){        //if the plane can't lose any more weight
+                return;
+            }
+
+            q.setWeight( qWeight );
+
         }else{
-            double cost = p.priceClimb( s1, q, 0, weight, climbData, cruiseData, coordinates );
+
+
+            coordinate c1 = coordinates.get( s1.getFLandWP().getWP() );
+            coordinate c2 = coordinates.get( s1.getFLandWP().getWP() );
+
+            double cost = p.priceClimb( s1, q, 0, weightIndex, climbData, cruiseData, coordinates );
             q.setCost( s1.getCost() + cost );
+
+            double deltaWeight = p.fuelAdjacentClimb( climbData, cruiseData, c1, c2, s1.getFLandWP().getFL(), q.getFLandWP().getFL(), 0, weightIndex);
+
+            Integer qWeight = (int)(s1.getWeight() - deltaWeight);
+
+            if(qWeight < 0){        //if the plane can't lose any more weight
+                return;
+            }
+
+            q.setWeight( qWeight );
+
         }
         q.setPredecessor( s1 );
         vertex u = heap.search(q.getFLandWP());
@@ -140,7 +198,7 @@ public class Dijkstra {
 
         /* Manually inserting our last WP into our minHeap, so we have a reference to the last WP */
         heap.insert(lastWP);
-        analyzeVertex(s,0,5);
+        analyzeVertex(s,0);
 
         vertex lastVertex = null;
         vertex u;
@@ -149,11 +207,13 @@ public class Dijkstra {
             if ( u.getFLandWP().getWP() == lastWP.getFLandWP().getWP() ) {
                 lastVertex = u;
                 heap.removeAllAbove( u.getCost() );
-            } else analyzeVertex(u,0,5);
+            } else analyzeVertex(u,0);
         }
         System.out.println( "This is the last vertex - FL:" + lastVertex.getFLandWP().getFL() + " and WP: " + lastVertex.getFLandWP().getWP() + " and the final cost was: " + lastVertex.getCost() );
         backtracking(lastVertex);
     }
+
+
 
 
     private void backtracking (vertex v) {
@@ -164,8 +224,6 @@ public class Dijkstra {
         }
 
     }
-    /**
-     * write method to remove all paths in queue that cost more
-     */
+
 
 }

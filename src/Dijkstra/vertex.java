@@ -4,6 +4,7 @@ import PQHeap.FLandWP;
 
 public class vertex {
 
+    private Integer weight = null;
     private FLandWP FLandWP;
     private Double cost;
     private vertex predecessor = null;
@@ -48,6 +49,11 @@ public class vertex {
     public void setPredecessor(vertex predecessor) {
         this.predecessor = predecessor;
     }
+
+    public void setWeight(Integer weight){
+        this.weight = weight;
+    }
+    public Integer getWeight() { return weight; }
 
     public PQHeap.FLandWP getFLandWP() {
         return FLandWP;

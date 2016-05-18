@@ -21,7 +21,7 @@ public class main {
 
         // Mathias' paths
         Path input = Paths.get( "D:\\Documents 2\\Data" );
-        Path output = Paths.get( "C:\\Users\\MGund\\Documents\\GitHub\\Program\\Data\\" );
+        Path output = Paths.get( "C:\\Users\\Kasper\\Documents\\GitHub\\Program\\Program\\Data\\" );
 
         // Daniel's paths
         //Path input = Paths.get( "C:\\Users\\Danie\\OneDrive\\Dokumenter\\Data\\Data\\ACP\\Falcon 7x" );
@@ -44,9 +44,9 @@ public class main {
         weightLimitsData[] weightlimitsArray = (weightLimitsData[]) ez.deserializeWeight( "weightlimits.csv" );
         List EBBRESSA138Array = (List) ez.deserializeRoute( "EBBR-ESSA-138.txt" );
 
-        File route1 = new File( "C:\\Users\\MGund\\Documents\\GitHub\\Program\\Data\\Route\\EBBR-ESSA-138.txt" );
+        File route1 = new File( "C:\\Users\\Kasper\\Documents\\GitHub\\Program\\Program\\Data\\Route\\EBBR-ESSA-138.txt" );
 
-        Dijkstra dijkstra = new Dijkstra(route1,100, climbArray, descentArray, cruiseArray);
+        Dijkstra dijkstra = new Dijkstra(route1, climbArray, descentArray, cruiseArray);
 
         dijkstra.Dijkstra_algorithm();
 

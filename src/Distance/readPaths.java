@@ -402,8 +402,7 @@ public class readPaths {
 
         double cruiseTime = deltaDistance/cruiseSpeed;
 
-        return climbTime + cruiseTime;
-
+        return climbTime/60 + cruiseTime;
 
     }
 
@@ -493,7 +492,7 @@ public class readPaths {
 
         double cruiseTime = deltaDistance/cruiseSpeed;
 
-        return climbTime + cruiseTime;
+        return climbTime/60 + cruiseTime;
 
     }
 
@@ -515,7 +514,7 @@ public class readPaths {
 
         double time = timeAdjacentClimb(climbData, cruiseData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s2FLandWP.getWP()), s1FLandWP.getFL(), s2FLandWP.getFL(), ISA, weight);
 
-        result = (time/60)*1000 + (fuel/6.2)*3;
+        result = time*1000 + (fuel/6.2)*3;
 
         return result;
     }
@@ -530,7 +529,7 @@ public class readPaths {
 
         double time = timeAdjacentDescent(descentData, cruiseData, coordinates.get(s1FLandWP.getWP()), coordinates.get(s2FLandWP.getWP()), s1FLandWP.getFL(), s2FLandWP.getFL(), ISA, weight);
 
-        result = (time/60)*1000 + (fuel/6.2)*3;
+        result = time*1000 + (fuel/6.2)*3;
 
         return result;
     }
