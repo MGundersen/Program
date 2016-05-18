@@ -1,7 +1,5 @@
 import Data.*;
 import Dijkstra.*;
-import Distance.coordinate;
-import Distance.readPaths;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -23,15 +21,7 @@ public class main {
 
         // Mathias' paths
         Path input = Paths.get( "D:\\Documents 2\\Data" );
-<<<<<<< HEAD
         Path output = Paths.get( "C:\\Users\\Kasper\\Documents\\GitHub\\Program\\Program\\Data\\" );
-=======
-<<<<<<< HEAD
-        Path output = Paths.get( "C:\\Users\\Mathias\\Documents\\GitHub\\Program\\Data\\" );
-=======
-        Path output = Paths.get( "C:\\Users\\MGund\\Documents\\GitHub\\Program\\Data\\" );
->>>>>>> origin/master
->>>>>>> origin/master
 
         // Daniel's paths
         //Path input = Paths.get( "C:\\Users\\Danie\\OneDrive\\Dokumenter\\Data\\Data\\ACP\\Falcon 7x" );
@@ -54,30 +44,11 @@ public class main {
         weightLimitsData[] weightlimitsArray = (weightLimitsData[]) ez.deserializeWeight( "weightlimits.csv" );
         List EBBRESSA138Array = (List) ez.deserializeRoute( "EBBR-ESSA-138.txt" );
 
-<<<<<<< HEAD
         File route1 = new File( "C:\\Users\\Kasper\\Documents\\GitHub\\Program\\Program\\Data\\Route\\EBBR-ESSA-138.txt" );
-=======
-<<<<<<< HEAD
-        File route1 = new File( "C:\\Users\\Mathias\\Documents\\GitHub\\Program\\Data\\Route\\EBBR-ESSA-138.txt" );
-=======
-        File route1 = new File( "C:\\Users\\MGund\\Documents\\GitHub\\Program\\Data\\Route\\EBBR-ESSA-138.txt" );
->>>>>>> origin/master
->>>>>>> origin/master
 
         Dijkstra dijkstra = new Dijkstra(route1, climbArray, descentArray, cruiseArray);
 
         dijkstra.Dijkstra_algorithm();
-<<<<<<< HEAD
-
-        readPaths rp = new readPaths();
-
-        List<coordinate> list = rp.waypoints(route1);
-
-        System.out.println( "Length of route: " + rp.distanceRoute(list) );
-
-
-=======
->>>>>>> origin/master
 
 
     }

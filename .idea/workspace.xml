@@ -4,69 +4,11 @@
     <list default="true" id="1f4c124d-58aa-4e53-8bd5-9344fc706a02" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Program/Dijkstra/Dijkstra.class" afterPath="$PROJECT_DIR$/out/production/Program/Dijkstra/Dijkstra.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Program/Dijkstra/vertex.class" afterPath="$PROJECT_DIR$/out/production/Program/Dijkstra/vertex.class" />
-<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dijkstra/Dijkstra.java" afterPath="$PROJECT_DIR$/src/Dijkstra/Dijkstra.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dijkstra/vertex.java" afterPath="$PROJECT_DIR$/src/Dijkstra/vertex.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Distance/readPaths.java" afterPath="$PROJECT_DIR$/src/Distance/readPaths.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java" afterPath="$PROJECT_DIR$/src/main.java" />
-=======
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Program/Distance/cruisePerformance.class" afterPath="$PROJECT_DIR$/out/production/Program/Distance/cruisePerformance.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Program/Distance/readPaths$coordinateAndFL.class" afterPath="$PROJECT_DIR$/out/production/Program/Distance/readPaths$coordinateAndFL.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Program/Distance/readPaths.class" afterPath="$PROJECT_DIR$/out/production/Program/Distance/readPaths.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Program/PQHeap/PQ.class" afterPath="$PROJECT_DIR$/out/production/Program/PQHeap/PQ.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Program/PQHeap/PQHeap.class" afterPath="$PROJECT_DIR$/out/production/Program/PQHeap/PQHeap.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Program/main.class" afterPath="$PROJECT_DIR$/out/production/Program/main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitattributes" afterPath="$PROJECT_DIR$/.gitattributes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/ACP/Falcon 7x/climb.csv" afterPath="$PROJECT_DIR$/Data/ACP/Falcon 7x/climb.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/ACP/Falcon 7x/cruise.csv" afterPath="$PROJECT_DIR$/Data/ACP/Falcon 7x/cruise.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/ACP/Falcon 7x/descent.csv" afterPath="$PROJECT_DIR$/Data/ACP/Falcon 7x/descent.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/ACP/Falcon 7x/weightlimits.csv" afterPath="$PROJECT_DIR$/Data/ACP/Falcon 7x/weightlimits.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/ACP/formater.txt" afterPath="$PROJECT_DIR$/Data/ACP/formater.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Route/EBBR-ESSA-138.txt" afterPath="$PROJECT_DIR$/Data/Route/EBBR-ESSA-138.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Route/EBBR-VABB-40.txt" afterPath="$PROJECT_DIR$/Data/Route/EBBR-VABB-40.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Route/EDDF-EKCH-125.txt" afterPath="$PROJECT_DIR$/Data/Route/EDDF-EKCH-125.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Route/EDDG-GCTS-103.txt" afterPath="$PROJECT_DIR$/Data/Route/EDDG-GCTS-103.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Route/EFHK-EGKK-195.txt" afterPath="$PROJECT_DIR$/Data/Route/EFHK-EGKK-195.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Route/EFVA-ESSA-12.txt" afterPath="$PROJECT_DIR$/Data/Route/EFVA-ESSA-12.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Route/EGBB-EKCH-129.txt" afterPath="$PROJECT_DIR$/Data/Route/EGBB-EKCH-129.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Route/EGCC-EKCH-32.txt" afterPath="$PROJECT_DIR$/Data/Route/EGCC-EKCH-32.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Route/Format.txt" afterPath="$PROJECT_DIR$/Data/Route/Format.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Route/GCLP-EDDE-29.txt" afterPath="$PROJECT_DIR$/Data/Route/GCLP-EDDE-29.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Route/HAAB-EGLL-85.txt" afterPath="$PROJECT_DIR$/Data/Route/HAAB-EGLL-85.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Route/HEGN-EDDB-50.txt" afterPath="$PROJECT_DIR$/Data/Route/HEGN-EDDB-50.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Route/LEMD-LIRF-4.txt" afterPath="$PROJECT_DIR$/Data/Route/LEMD-LIRF-4.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/cost.txt" afterPath="$PROJECT_DIR$/Data/cost.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program.iml" afterPath="$PROJECT_DIR$/Program.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Data/climbData.java" afterPath="$PROJECT_DIR$/src/Data/climbData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Data/cruiseData.java" afterPath="$PROJECT_DIR$/src/Data/cruiseData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Data/dataArrays.java" afterPath="$PROJECT_DIR$/src/Data/dataArrays.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Data/descentData.java" afterPath="$PROJECT_DIR$/src/Data/descentData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Data/weightLimitsData.java" afterPath="$PROJECT_DIR$/src/Data/weightLimitsData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dijkstra/Dijkstra.java" afterPath="$PROJECT_DIR$/src/Dijkstra/Dijkstra.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dijkstra/vertex.java" afterPath="$PROJECT_DIR$/src/Dijkstra/vertex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Distance/climb.java" afterPath="$PROJECT_DIR$/src/Distance/climb.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Distance/coordinate.java" afterPath="$PROJECT_DIR$/src/Distance/coordinate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Distance/cruisePerformance.java" afterPath="$PROJECT_DIR$/src/Distance/cruisePerformance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Distance/descent.java" afterPath="$PROJECT_DIR$/src/Distance/descent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Distance/readPaths.java" afterPath="$PROJECT_DIR$/src/Distance/readPaths.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Distance/weightLimit.java" afterPath="$PROJECT_DIR$/src/Distance/weightLimit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Node.java" afterPath="$PROJECT_DIR$/src/Node.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PQHeap/Element.java" afterPath="$PROJECT_DIR$/src/PQHeap/Element.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PQHeap/PQ.java" afterPath="$PROJECT_DIR$/src/PQHeap/PQ.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PQHeap/PQHeap.java" afterPath="$PROJECT_DIR$/src/PQHeap/PQHeap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java" afterPath="$PROJECT_DIR$/src/main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ser.java" afterPath="$PROJECT_DIR$/src/ser.java" />
->>>>>>> origin/master
     </list>
     <ignored path="Program.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,7 +35,6 @@
         <entry file="file://$PROJECT_DIR$/src/PQHeap/PQ.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
               <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
               <folding />
             </state>
@@ -115,13 +56,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="164" column="27" selection-start-line="164" selection-start-column="27" selection-end-line="164" selection-end-column="27" />
-=======
-<<<<<<< HEAD
-              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-=======
-              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
->>>>>>> origin/master
->>>>>>> origin/master
               <folding />
             </state>
           </provider>
@@ -130,72 +64,20 @@
       <file leaf-file-name="Dijkstra.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Dijkstra/Dijkstra.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
             <state vertical-scroll-proportion="5.818612">
               <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
-=======
-<<<<<<< HEAD
-            <state vertical-scroll-proportion="0.0">
-              <caret line="104" column="16" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readPaths.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Distance/readPaths.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PQHeap.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PQHeap/PQHeap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="168" column="1" selection-start-line="168" selection-start-column="1" selection-end-line="168" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vertex.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dijkstra/vertex.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-              <folding />
-=======
-            <state vertical-scroll-proportion="-0.5254237">
-              <caret line="75" column="22" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
->>>>>>> origin/master
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
->>>>>>> origin/master
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
       <file leaf-file-name="climbData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Data/climbData.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-=======
-      <file leaf-file-name="FLandWP.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PQHeap/FLandWP.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-=======
-              <caret line="107" column="7" selection-start-line="107" selection-start-column="7" selection-end-line="107" selection-end-column="7" />
->>>>>>> origin/master
               <folding />
             </state>
           </provider>
@@ -205,18 +87,12 @@
         <entry file="file://$PROJECT_DIR$/src/Distance/climb.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
               <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
-=======
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
->>>>>>> origin/master
->>>>>>> origin/master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
       <file leaf-file-name="readPaths.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Distance/readPaths.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -229,20 +105,10 @@
           </provider>
         </entry>
       </file>
-=======
-<<<<<<< HEAD
-      <file leaf-file-name="main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6565144">
-              <caret line="58" column="75" selection-start-line="58" selection-start-column="75" selection-end-line="58" selection-end-column="75" />
-=======
->>>>>>> origin/master
       <file leaf-file-name="main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
               <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
               <folding />
             </state>
@@ -264,10 +130,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-=======
-              <caret line="42" column="75" selection-start-line="42" selection-start-column="75" selection-end-line="42" selection-end-column="75" />
->>>>>>> origin/master
->>>>>>> origin/master
               <folding />
             </state>
           </provider>
@@ -299,29 +161,13 @@
         <option value="$PROJECT_DIR$/src/Dijkstra.java" />
         <option value="$PROJECT_DIR$/src/PQHeap/FLandWP.java" />
         <option value="$PROJECT_DIR$/src/Distance/cruisePerformance.java" />
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
         <option value="C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/util/ArrayList.java" />
         <option value="$PROJECT_DIR$/src/PQHeap/PQ.java" />
-        <option value="$PROJECT_DIR$/src/Distance/readPaths.java" />
-        <option value="$PROJECT_DIR$/src/PQHeap/PQHeap.java" />
-=======
-        <option value="$PROJECT_DIR$/src/main.java" />
-        <option value="$PROJECT_DIR$/src/Distance/readPaths.java" />
->>>>>>> origin/master
-        <option value="C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/util/ArrayList.java" />
-        <option value="$PROJECT_DIR$/src/PQHeap/PQ.java" />
-<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/PQHeap/PQHeap.java" />
         <option value="$PROJECT_DIR$/src/Dijkstra/vertex.java" />
         <option value="$PROJECT_DIR$/src/main.java" />
         <option value="$PROJECT_DIR$/src/Distance/readPaths.java" />
-=======
->>>>>>> origin/master
->>>>>>> origin/master
         <option value="$PROJECT_DIR$/src/Dijkstra/Dijkstra.java" />
-        <option value="$PROJECT_DIR$/src/main.java" />
       </list>
     </option>
   </component>
@@ -361,16 +207,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-<<<<<<< HEAD
       <pane id="Scope" />
       <pane id="PackagesPane" />
-=======
-<<<<<<< HEAD
-=======
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
->>>>>>> origin/master
->>>>>>> origin/master
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -403,7 +241,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-<<<<<<< HEAD
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Program" />
@@ -458,15 +295,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-=======
->>>>>>> origin/master
         </subPane>
       </pane>
-<<<<<<< HEAD
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-=======
->>>>>>> origin/master
       <pane id="Scratches" />
     </panes>
   </component>
@@ -831,7 +661,6 @@
       <envs />
       <method />
     </configuration>
-<<<<<<< HEAD
     <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -878,8 +707,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-=======
->>>>>>> origin/master
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -1090,18 +917,9 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-<<<<<<< HEAD
   <component name="SvnConfiguration">
     <configuration />
   </component>
-=======
-<<<<<<< HEAD
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
-=======
->>>>>>> origin/master
->>>>>>> origin/master
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="1f4c124d-58aa-4e53-8bd5-9344fc706a02" name="Default" comment="" />
@@ -1117,22 +935,12 @@
       <workItem from="1462990126900" duration="376000" />
       <workItem from="1463142782834" duration="9079000" />
       <workItem from="1463152108995" duration="8581000" />
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/master
       <workItem from="1463221712583" duration="12778000" />
       <workItem from="1463234739940" duration="80000" />
       <workItem from="1463303104763" duration="9432000" />
       <workItem from="1463321301826" duration="1915000" />
-<<<<<<< HEAD
       <workItem from="1463469480730" duration="17990000" />
       <workItem from="1463565555872" duration="6601000" />
-=======
-      <workItem from="1463480171103" duration="1137000" />
-=======
->>>>>>> origin/master
->>>>>>> origin/master
     </task>
     <task id="LOCAL-00001" summary="fiksede cruise serialisation">
       <created>1462368612477</created>
@@ -1158,10 +966,6 @@
       <option name="project" value="LOCAL" />
       <updated>1462956146024</updated>
     </task>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/master
     <task id="LOCAL-00005" summary="arbejdede en smule med dijkstra">
       <created>1463234788652</created>
       <option name="number" value="00005" />
@@ -1175,24 +979,10 @@
       <updated>1463323174988</updated>
     </task>
     <option name="localTasksCounter" value="7" />
-<<<<<<< HEAD
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="84605000" />
-=======
-    <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61151000" />
-=======
-    <option name="localTasksCounter" value="5" />
-    <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35809000" />
->>>>>>> origin/master
->>>>>>> origin/master
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1200,22 +990,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3245243" sideWeight="0.49166667" order="7" side_tool="false" content_ui="tabs" />
-=======
-<<<<<<< HEAD
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3245243" sideWeight="0.49166667" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5165245" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.48347548" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10927505" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-=======
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32502708" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
->>>>>>> origin/master
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5208333" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1223,12 +998,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.47916666" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.109375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-=======
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1098081" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
->>>>>>> origin/master
->>>>>>> origin/master
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1258,19 +1028,9 @@
     <MESSAGE value="fiksede cruise serialisation" />
     <MESSAGE value="dijkstra begyndelse" />
     <MESSAGE value="fixed readPath" />
-<<<<<<< HEAD
     <MESSAGE value="arbejdede en smule med dijkstra" />
     <MESSAGE value="dijkstra's algoritme virker" />
     <option name="LAST_COMMIT_MESSAGE" value="dijkstra's algoritme virker" />
-=======
-<<<<<<< HEAD
-    <MESSAGE value="arbejdede en smule med dijkstra" />
-    <MESSAGE value="dijkstra's algoritme virker" />
-    <option name="LAST_COMMIT_MESSAGE" value="dijkstra's algoritme virker" />
-=======
-    <option name="LAST_COMMIT_MESSAGE" value="fixed readPath" />
->>>>>>> origin/master
->>>>>>> origin/master
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1302,13 +1062,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
-<<<<<<< HEAD
-          <folding />
-=======
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
->>>>>>> origin/master
         </state>
       </provider>
     </entry>
@@ -1324,21 +1080,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-<<<<<<< HEAD
           <folding />
-=======
-<<<<<<< HEAD
-          <folding />
-=======
-          <folding>
-            <element signature="method#FLPosition#0;class#vertex#0" expanded="false" />
-            <element signature="e#932#933#0" expanded="true" />
-            <element signature="e#964#965#0" expanded="true" />
-            <element signature="e#1178#1179#0" expanded="true" />
-            <element signature="e#1208#1209#0" expanded="true" />
-          </folding>
->>>>>>> origin/master
->>>>>>> origin/master
         </state>
       </provider>
     </entry>
@@ -1353,19 +1095,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-<<<<<<< HEAD
           <folding />
-=======
-<<<<<<< HEAD
-          <folding />
-=======
-          <folding>
-            <element signature="e#159#160#0" expanded="false" />
-            <element signature="e#184#185#0" expanded="false" />
-            <element signature="e#239#240#0" expanded="false" />
-          </folding>
->>>>>>> origin/master
->>>>>>> origin/master
         </state>
       </provider>
     </entry>
@@ -1374,67 +1104,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding />
-<<<<<<< HEAD
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Distance/readPaths.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Distance/climb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PQHeap/PQ.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dijkstra/Dijkstra.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dijkstra/vertex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Distance/coordinate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Distance/descent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="99" selection-start-line="69" selection-start-column="99" selection-end-line="69" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PQHeap/PQHeap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-=======
         </state>
       </provider>
     </entry>
@@ -1498,7 +1167,6 @@
     <entry file="file://$PROJECT_DIR$/src/PQHeap/PQHeap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
->>>>>>> origin/master
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
@@ -1508,13 +1176,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="437" column="0" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
-<<<<<<< HEAD
-          <folding />
-=======
           <folding>
             <element signature="method#climbRoute#0;class#readPaths#0" expanded="false" />
           </folding>
->>>>>>> origin/master
         </state>
       </provider>
     </entry>
@@ -1560,13 +1224,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="224" column="9" selection-start-line="224" selection-start-column="9" selection-end-line="224" selection-end-column="9" />
-<<<<<<< HEAD
-          <folding />
-=======
           <folding>
             <element signature="method#climbRoute#0;class#readPaths#0" expanded="false" />
           </folding>
->>>>>>> origin/master
         </state>
       </provider>
     </entry>
@@ -1597,13 +1257,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="224" column="9" selection-start-line="224" selection-start-column="9" selection-end-line="224" selection-end-column="9" />
-<<<<<<< HEAD
-          <folding />
-=======
           <folding>
             <element signature="method#climbRoute#0;class#readPaths#0" expanded="false" />
           </folding>
->>>>>>> origin/master
         </state>
       </provider>
     </entry>
@@ -1683,12 +1339,7 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/util/ArrayList.java">
-=======
-    <entry file="file://$PROJECT_DIR$/src/ser.java">
-<<<<<<< HEAD
->>>>>>> origin/master
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="428" column="0" selection-start-line="428" selection-start-column="0" selection-end-line="428" selection-end-column="0" />
@@ -1697,23 +1348,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PQHeap/Element.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
         <state vertical-scroll-proportion="0.05762712">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-=======
-=======
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Distance/coordinate.java">
-      <provider selected="true" editor-type-id="text-editor">
->>>>>>> origin/master
-        <state vertical-scroll-proportion="0.20307167">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
->>>>>>> origin/master
         </state>
       </provider>
     </entry>
@@ -1733,37 +1369,7 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Dijkstra/vertex.java">
-=======
-    <entry file="file://$PROJECT_DIR$/src/Distance/cruisePerformance.java">
-<<<<<<< HEAD
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="428" column="0" selection-start-line="428" selection-start-column="0" selection-end-line="428" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PQHeap/Element.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05762712">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PQHeap/FLandWP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-=======
->>>>>>> origin/master
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
@@ -1790,78 +1396,31 @@
     <entry file="file://$PROJECT_DIR$/src/Data/dataArrays.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
           <caret line="164" column="27" selection-start-line="164" selection-start-column="27" selection-end-line="164" selection-end-column="27" />
-=======
-          <caret line="428" column="0" selection-start-line="428" selection-start-column="0" selection-end-line="428" selection-end-column="0" />
->>>>>>> origin/master
->>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Data/climbData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-=======
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/PQHeap/PQHeap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="168" column="1" selection-start-line="168" selection-start-column="1" selection-end-line="168" selection-end-column="1" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="75" selection-start-line="42" selection-start-column="75" selection-end-line="42" selection-end-column="75" />
->>>>>>> origin/master
->>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Distance/cruisePerformance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
-=======
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/Dijkstra/vertex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/PQHeap/Element.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05762712">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
->>>>>>> origin/master
->>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Distance/climb.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
-=======
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/Distance/readPaths.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/Dijkstra/vertex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
->>>>>>> origin/master
->>>>>>> origin/master
           <folding />
         </state>
       </provider>
@@ -1869,15 +1428,7 @@
     <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
           <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
-=======
-<<<<<<< HEAD
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-=======
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
->>>>>>> origin/master
->>>>>>> origin/master
           <folding />
         </state>
       </provider>
@@ -1885,40 +1436,20 @@
     <entry file="file://$PROJECT_DIR$/src/Distance/readPaths.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-<<<<<<< HEAD
           <caret line="521" column="24" selection-start-line="521" selection-start-column="24" selection-end-line="521" selection-end-column="24" />
           <folding>
             <element signature="method#climbRoute#0;class#readPaths#0" expanded="false" />
           </folding>
-=======
-<<<<<<< HEAD
-          <caret line="104" column="16" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
-=======
-          <caret line="107" column="7" selection-start-line="107" selection-start-column="7" selection-end-line="107" selection-end-column="7" />
->>>>>>> origin/master
-          <folding />
->>>>>>> origin/master
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Dijkstra/Dijkstra.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
         <state vertical-scroll-proportion="5.818612">
           <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
-=======
-<<<<<<< HEAD
-        <state vertical-scroll-proportion="0.6565144">
-          <caret line="58" column="75" selection-start-line="58" selection-start-column="75" selection-end-line="58" selection-end-column="75" />
-          <folding />
-=======
-        <state vertical-scroll-proportion="-0.5254237">
-          <caret line="75" column="22" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
->>>>>>> origin/master
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
->>>>>>> origin/master
         </state>
       </provider>
     </entry>
